@@ -117,7 +117,7 @@ int main(void)
 
 	I2C_PeripheralControl(I2C1, ENABLE);
 
-//	I2C_AddressScan(&I2C1Handle);
+	I2C_AddressScan(&I2C1Handle);
 	uint8_t who_am_i_reg = 0x75;
 	uint8_t result = 0;
 
