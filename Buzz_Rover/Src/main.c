@@ -46,9 +46,18 @@ void I2C_ApplicationEventCallback(I2C_Handle_t *pI2CHandle, uint8_t AppEv)
 		break;
 	case I2C_ERROR_OVR:
 	case I2C_ERROR_TIMEOUT:
+		break;
+	case I2C_EV_TX_CMPLT:
+	case I2C_EV_RX_CMPLT:
+		break;
 	default:
 		break;
 	}
+}
+
+void I2C1_EV_IRQHandler(void)
+{
+	I2C_EV_IRQHandling(&I2C1Handle);
 }
 
 void I2C1_ER_IRQHandler(void)
@@ -104,6 +113,7 @@ int main(void)
 	I2C_Init(&I2C1Handle);
 
 	GPIO_IRQConfig(I2C1_ER_IRQ, 1, ENABLE);
+	GPIO_IRQConfig(I2C1_EV_IRQ, 1, ENABLE);
 
 	I2C_PeripheralControl(I2C1, ENABLE);
 
@@ -111,12 +121,17 @@ int main(void)
 	uint8_t who_am_i_reg = 0x75;
 	uint8_t result = 0;
 
-	I2C_MasterSendData(&I2C1Handle, &who_am_i_reg, 1, 0x69,I2C_ENABLE_SR);
-	I2C_MasterReceiveData(&I2C1Handle, &result, 1, 0x69, I2C_DISABLE_SR);
+	I2C_MasterSendDataIT(&I2C1Handle, &who_am_i_reg, 1, 0x69, I2C_DISABLE_SR);
+
+	while(I2C1Handle.TxRxState != I2C_READY);
+
+	I2C_MasterReceiveDataIT(&I2C1Handle, &result, 1, 0x69, I2C_DISABLE_SR);
+
+	while(I2C1Handle.TxRxState != I2C_READY);
 
 	GPIO_WriteToOutputPin(GPIOA, GPIO_PIN_NO_5, GPIO_PIN_SET);
 
-	printf("WHO_AM_I = 0x%02X\r\n", result);
+	printf("WHO_AM_I(IT) = 0x%02X\r\n", result);
 
 	while(1)
 	{

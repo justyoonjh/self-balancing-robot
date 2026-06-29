@@ -275,3 +275,486 @@ arm-none-eabi-size  Buzz_Rover.elf
    9084	    100	   1948	  11132	   2b7c	Buzz_Rover.elf
 Finished building: default.size.stdout
  
+20:21:23 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9084	    100	   1948	  11132	   2b7c	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+22:42:04 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../drivers/Src/buzz_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/buzz_i2c.d" -MT"drivers/Src/buzz_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/buzz_i2c.o"
+arm-none-eabi-gcc "../debug_app/Src/i2c_scanner.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"debug_app/Src/i2c_scanner.d" -MT"debug_app/Src/i2c_scanner.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "debug_app/Src/i2c_scanner.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from ../drivers/Src/buzz_i2c.c:1:
+/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_i2c.h:100:23: error: unknown type name 'I2C_RegDef_t'; did you mean 'I2C_RegMap_t'?
+  100 | void I2C_ManageAcking(I2C_RegDef_t *pI2Cx, uint8_t EnorDi);
+      |                       ^~~~~~~~~~~~
+      |                       I2C_RegMap_t
+../drivers/Src/buzz_i2c.c:199:42: error: unknown type name 'I2C_RegDef_t'; did you mean 'I2C_RegMap_t'?
+  199 | static void I2C_ExecuteAddressPhaseWrite(I2C_RegDef_t *pI2Cx, uint8_t SlaveAddr)
+      |                                          ^~~~~~~~~~~~
+      |                                          I2C_RegMap_t
+../drivers/Src/buzz_i2c.c:206:41: error: unknown type name 'I2C_RegDef_t'; did you mean 'I2C_RegMap_t'?
+  206 | static void I2C_ExecuteAddressPhaseRead(I2C_RegDef_t *pI2Cx, uint8_t SlaveAddr)
+      |                                         ^~~~~~~~~~~~
+      |                                         I2C_RegMap_t
+../drivers/Src/buzz_i2c.c: In function 'I2C_ClearADDRFlag':
+../drivers/Src/buzz_i2c.c:222:33: warning: implicit declaration of function 'I2C_ManageAcking' [-Wimplicit-function-declaration]
+  222 |                                 I2C_ManageAcking(pI2CHandle->pI2Cx, I2C_ACK_DISABLE);
+      |                                 ^~~~~~~~~~~~~~~~
+../drivers/Src/buzz_i2c.c: At top level:
+In file included from /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc/i2c_scanner.h:4,
+                 from ../debug_app/Src/i2c_scanner.c:4:
+/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_i2c.h:100:23: error: unknown type name 'I2C_RegDef_t'; did you mean 'I2C_RegMap_t'?
+  100 | void I2C_ManageAcking(I2C_RegDef_t *pI2Cx, uint8_t EnorDi);
+      |                       ^~~~~~~~~~~~
+      |                       I2C_RegMap_t
+../drivers/Src/buzz_i2c.c:242:23: error: unknown type name 'I2C_RegDef_t'; did you mean 'I2C_RegMap_t'?
+  242 | void I2C_ManageAcking(I2C_RegDef_t *pI2Cx, uint8_t EnorDi)
+      |                       ^~~~~~~~~~~~
+      |                       I2C_RegMap_t
+In file included from /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc/i2c_scanner.h:4,
+                 from ../Src/main.c:24:
+/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_i2c.h:100:23: error: unknown type name 'I2C_RegDef_t'; did you mean 'I2C_RegMap_t'?
+  100 | void I2C_ManageAcking(I2C_RegDef_t *pI2Cx, uint8_t EnorDi);
+      |                       ^~~~~~~~~~~~
+      |                       I2C_RegMap_t
+../drivers/Src/buzz_i2c.c: In function 'I2C_EV_IRQHandling':
+../drivers/Src/buzz_i2c.c:350:25: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseWrite' [-Wimplicit-function-declaration]
+  350 |                         I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx, pI2CHandle->DevAddr);
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../drivers/Src/buzz_i2c.c:352:25: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseRead' [-Wimplicit-function-declaration]
+  352 |                         I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx, pI2CHandle->DevAddr);
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../drivers/Src/buzz_i2c.c:366:59: error: 'I2C_SR1_TxE' undeclared (first use in this function); did you mean 'I2C_SR1_TXE'?
+  366 |                         if(pI2CHandle->pI2Cx->SR1 & (1 << I2C_SR1_TxE))
+      |                                                           ^~~~~~~~~~~
+      |                                                           I2C_SR1_TXE
+../drivers/Src/buzz_i2c.c:366:59: note: each undeclared identifier is reported only once for each function it appears in
+../drivers/Src/buzz_i2c.c:405:48: error: 'I2C_SR1_RxNE' undeclared (first use in this function); did you mean 'I2C_SR1_RXNE'?
+  405 |         temp3 = pI2CHandle->pI2Cx->SR1 & (1 << I2C_SR1_RxNE);
+      |                                                ^~~~~~~~~~~~
+      |                                                I2C_SR1_RXNE
+make: *** [debug_app/Src/subdir.mk:19: debug_app/Src/i2c_scanner.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [drivers/Src/subdir.mk:31: drivers/Src/buzz_i2c.o] Error 1
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+22:43:13 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../drivers/Src/buzz_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/buzz_i2c.d" -MT"drivers/Src/buzz_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/buzz_i2c.o"
+arm-none-eabi-gcc "../debug_app/Src/i2c_scanner.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"debug_app/Src/i2c_scanner.d" -MT"debug_app/Src/i2c_scanner.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "debug_app/Src/i2c_scanner.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from ../drivers/Src/buzz_i2c.c:1:
+/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_i2c.h:100:23: error: unknown type name 'I2C_RegDef_t'; did you mean 'I2C_RegMap_t'?
+  100 | void I2C_ManageAcking(I2C_RegDef_t *pI2Cx, uint8_t EnorDi);
+      |                       ^~~~~~~~~~~~
+      |                       I2C_RegMap_t
+../drivers/Src/buzz_i2c.c: In function 'I2C_ClearADDRFlag':
+../drivers/Src/buzz_i2c.c:222:33: warning: implicit declaration of function 'I2C_ManageAcking' [-Wimplicit-function-declaration]
+  222 |                                 I2C_ManageAcking(pI2CHandle->pI2Cx, I2C_ACK_DISABLE);
+      |                                 ^~~~~~~~~~~~~~~~
+../drivers/Src/buzz_i2c.c: At top level:
+../drivers/Src/buzz_i2c.c:242:6: warning: conflicting types for 'I2C_ManageAcking'; have 'void(I2C_RegMap_t *, uint8_t)' {aka 'void(I2C_RegMap_t *, unsigned char)'}
+  242 | void I2C_ManageAcking(I2C_RegMap_t *pI2Cx, uint8_t EnorDi)
+      |      ^~~~~~~~~~~~~~~~
+../drivers/Src/buzz_i2c.c:222:33: note: previous implicit declaration of 'I2C_ManageAcking' with type 'void(I2C_RegMap_t *, uint8_t)' {aka 'void(I2C_RegMap_t *, unsigned char)'}
+  222 |                                 I2C_ManageAcking(pI2CHandle->pI2Cx, I2C_ACK_DISABLE);
+      |                                 ^~~~~~~~~~~~~~~~
+../drivers/Src/buzz_i2c.c: In function 'I2C_EV_IRQHandling':
+../drivers/Src/buzz_i2c.c:390:48: error: 'I2C_SR1_TxE' undeclared (first use in this function); did you mean 'I2C_SR1_TXE'?
+  390 |         temp3 = pI2CHandle->pI2Cx->SR1 & (1 << I2C_SR1_TxE);
+      |                                                ^~~~~~~~~~~
+      |                                                I2C_SR1_TXE
+../drivers/Src/buzz_i2c.c:390:48: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [drivers/Src/subdir.mk:31: drivers/Src/buzz_i2c.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc/i2c_scanner.h:4,
+                 from ../debug_app/Src/i2c_scanner.c:4:
+/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_i2c.h:100:23: error: unknown type name 'I2C_RegDef_t'; did you mean 'I2C_RegMap_t'?
+  100 | void I2C_ManageAcking(I2C_RegDef_t *pI2Cx, uint8_t EnorDi);
+      |                       ^~~~~~~~~~~~
+      |                       I2C_RegMap_t
+make: *** [debug_app/Src/subdir.mk:19: debug_app/Src/i2c_scanner.o] Error 1
+In file included from /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc/i2c_scanner.h:4,
+                 from ../Src/main.c:24:
+/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_i2c.h:100:23: error: unknown type name 'I2C_RegDef_t'; did you mean 'I2C_RegMap_t'?
+  100 | void I2C_ManageAcking(I2C_RegDef_t *pI2Cx, uint8_t EnorDi);
+      |                       ^~~~~~~~~~~~
+      |                       I2C_RegMap_t
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+22:43:21 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../drivers/Src/buzz_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/buzz_i2c.d" -MT"drivers/Src/buzz_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/buzz_i2c.o"
+arm-none-eabi-gcc "../debug_app/Src/i2c_scanner.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"debug_app/Src/i2c_scanner.d" -MT"debug_app/Src/i2c_scanner.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "debug_app/Src/i2c_scanner.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc/i2c_scanner.h:4,
+                 from ../debug_app/Src/i2c_scanner.c:4:
+/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_i2c.h:100:23: error: unknown type name 'I2C_RegDef_t'; did you mean 'I2C_RegMap_t'?
+  100 | void I2C_ManageAcking(I2C_RegDef_t *pI2Cx, uint8_t EnorDi);
+      |                       ^~~~~~~~~~~~
+      |                       I2C_RegMap_t
+In file included from /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc/i2c_scanner.h:4,
+                 from ../Src/main.c:24:
+/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_i2c.h:100:23: error: unknown type name 'I2C_RegDef_t'; did you mean 'I2C_RegMap_t'?
+  100 | void I2C_ManageAcking(I2C_RegDef_t *pI2Cx, uint8_t EnorDi);
+      |                       ^~~~~~~~~~~~
+      |                       I2C_RegMap_t
+In file included from ../drivers/Src/buzz_i2c.c:1:
+/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_i2c.h:100:23: error: unknown type name 'I2C_RegDef_t'; did you mean 'I2C_RegMap_t'?
+  100 | void I2C_ManageAcking(I2C_RegDef_t *pI2Cx, uint8_t EnorDi);
+      |                       ^~~~~~~~~~~~
+      |                       I2C_RegMap_t
+make: *** [debug_app/Src/subdir.mk:19: debug_app/Src/i2c_scanner.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+../drivers/Src/buzz_i2c.c: In function 'I2C_ClearADDRFlag':
+../drivers/Src/buzz_i2c.c:222:33: warning: implicit declaration of function 'I2C_ManageAcking' [-Wimplicit-function-declaration]
+  222 |                                 I2C_ManageAcking(pI2CHandle->pI2Cx, I2C_ACK_DISABLE);
+      |                                 ^~~~~~~~~~~~~~~~
+../drivers/Src/buzz_i2c.c: At top level:
+../drivers/Src/buzz_i2c.c:242:6: warning: conflicting types for 'I2C_ManageAcking'; have 'void(I2C_RegMap_t *, uint8_t)' {aka 'void(I2C_RegMap_t *, unsigned char)'}
+  242 | void I2C_ManageAcking(I2C_RegMap_t *pI2Cx, uint8_t EnorDi)
+      |      ^~~~~~~~~~~~~~~~
+../drivers/Src/buzz_i2c.c:222:33: note: previous implicit declaration of 'I2C_ManageAcking' with type 'void(I2C_RegMap_t *, uint8_t)' {aka 'void(I2C_RegMap_t *, unsigned char)'}
+  222 |                                 I2C_ManageAcking(pI2CHandle->pI2Cx, I2C_ACK_DISABLE);
+      |                                 ^~~~~~~~~~~~~~~~
+make: *** [drivers/Src/subdir.mk:31: drivers/Src/buzz_i2c.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+22:44:15 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../drivers/Src/buzz_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/buzz_i2c.d" -MT"drivers/Src/buzz_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/buzz_i2c.o"
+arm-none-eabi-gcc "../debug_app/Src/i2c_scanner.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"debug_app/Src/i2c_scanner.d" -MT"debug_app/Src/i2c_scanner.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "debug_app/Src/i2c_scanner.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../drivers/Src/buzz_i2c.c: In function 'I2C_ManageAcking':
+../drivers/Src/buzz_i2c.c:5:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+    5 | {
+      | ^
+../drivers/Src/buzz_i2c.c:21:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+   21 | {
+      | ^
+../drivers/Src/buzz_i2c.c:79:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+   79 | {
+      | ^
+../drivers/Src/buzz_i2c.c:91:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+   91 | {
+      | ^
+../drivers/Src/buzz_i2c.c:96:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+   96 | {
+      | ^
+../drivers/Src/buzz_i2c.c:101:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  101 | {
+      | ^
+../drivers/Src/buzz_i2c.c:110:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  110 | {
+      | ^
+../drivers/Src/buzz_i2c.c:146:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  146 | {
+      | ^
+../drivers/Src/buzz_i2c.c:200:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  200 | {
+      | ^
+../drivers/Src/buzz_i2c.c:207:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  207 | {
+      | ^
+../drivers/Src/buzz_i2c.c:214:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  214 | {
+      | ^
+../drivers/Src/buzz_i2c.c:243:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  243 | {
+      | ^
+../drivers/Src/buzz_i2c.c:255:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  255 | {
+      | ^
+../drivers/Src/buzz_i2c.c:277:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  277 | {
+      | ^
+../drivers/Src/buzz_i2c.c:300:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  300 | {
+      | ^
+../drivers/Src/buzz_i2c.c:310:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  310 | {
+      | ^
+../drivers/Src/buzz_i2c.c:340:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  340 | {
+      | ^
+../drivers/Src/buzz_i2c.c:422:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  422 | {
+      | ^
+../Src/main.c: In function 'I2C_ManageAcking':
+../Src/main.c:32:1: error: parameter 'g_i2cErrorFlag' is initialized
+   32 | volatile uint8_t g_i2cErrorFlag = 0;
+      | ^~~~~~~~
+../Src/main.c:33:1: error: parameter 'g_i2cErrorCode' is initialized
+   33 | volatile uint8_t g_i2cErrorCode = 0xFF;
+      | ^~~~~~~~
+../Src/main.c:35:21: error: storage class specified for parameter 'I2C1Handle'
+   35 | static I2C_Handle_t I2C1Handle = {0};
+      |                     ^~~~~~~~~~
+../Src/main.c:35:1: error: parameter 'I2C1Handle' is initialized
+   35 | static I2C_Handle_t I2C1Handle = {0};
+      | ^~~~~~
+../Src/main.c:38:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+   38 | {
+      | ^
+../Src/main.c:55:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+   55 | {
+      | ^
+../Src/main.c:60:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+   60 | {
+      | ^
+../drivers/Src/buzz_i2c.c:463:1: error: expected declaration specifiers before '__attribute__'
+  463 | __attribute__((weak))
+      | ^~~~~~~~~~~~~
+In file included from ../drivers/Src/buzz_i2c.c:1:
+/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_i2c.h:100:6: error: old-style parameter declarations in prototyped function definition
+  100 | void I2C_ManageAcking(I2C_RegMap_t *pI2Cx, uint8_t EnorDi)
+      |      ^~~~~~~~~~~~~~~~
+../drivers/Src/buzz_i2c.c:468: error: expected '{' at end of input
+In file included from /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc/i2c_scanner.h:4,
+                 from ../Src/main.c:24:
+/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_i2c.h:100:6: error: old-style parameter declarations in prototyped function definition
+  100 | void I2C_ManageAcking(I2C_RegMap_t *pI2Cx, uint8_t EnorDi)
+      |      ^~~~~~~~~~~~~~~~
+../Src/main.c:132: error: expected '{' at end of input
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [drivers/Src/subdir.mk:31: drivers/Src/buzz_i2c.o] Error 1
+../debug_app/Src/i2c_scanner.c: In function 'I2C_ManageAcking':
+../debug_app/Src/i2c_scanner.c:7:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+    7 | {
+      | ^
+In file included from /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc/i2c_scanner.h:4,
+                 from ../debug_app/Src/i2c_scanner.c:4:
+/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_i2c.h:100:6: error: old-style parameter declarations in prototyped function definition
+  100 | void I2C_ManageAcking(I2C_RegMap_t *pI2Cx, uint8_t EnorDi)
+      |      ^~~~~~~~~~~~~~~~
+../debug_app/Src/i2c_scanner.c:35: error: expected '{' at end of input
+make: *** [debug_app/Src/subdir.mk:19: debug_app/Src/i2c_scanner.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+22:44:21 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../drivers/Src/buzz_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/buzz_i2c.d" -MT"drivers/Src/buzz_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/buzz_i2c.o"
+arm-none-eabi-gcc "../debug_app/Src/i2c_scanner.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"debug_app/Src/i2c_scanner.d" -MT"debug_app/Src/i2c_scanner.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "debug_app/Src/i2c_scanner.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   9084	    100	   1948	  11132	   2b7c	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+22:55:04 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../drivers/Src/buzz_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/buzz_i2c.d" -MT"drivers/Src/buzz_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/buzz_i2c.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   9084	    100	   1948	  11132	   2b7c	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+23:02:28 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   9880	    100	   1948	  11928	   2e98	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+23:03:51 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   9912	    100	   1948	  11960	   2eb8	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+23:03:57 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9912	    100	   1948	  11960	   2eb8	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+23:07:26 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   9912	    100	   1948	  11960	   2eb8	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+23:07:29 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9912	    100	   1948	  11960	   2eb8	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+23:14:50 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9912	    100	   1948	  11960	   2eb8	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+23:14:52 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9912	    100	   1948	  11960	   2eb8	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+23:26:11 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../drivers/Src/buzz_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/buzz_i2c.d" -MT"drivers/Src/buzz_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/buzz_i2c.o"
+../drivers/Src/buzz_i2c.c: In function 'I2C_ER_IRQHandling':
+../drivers/Src/buzz_i2c.c:481:50: error: 'I2C_BUST_IN_RX' undeclared (first use in this function); did you mean 'I2C_BUSY_IN_RX'?
+  481 |                 else if(pI2CHandle->TxRxState == I2C_BUST_IN_RX)
+      |                                                  ^~~~~~~~~~~~~~
+      |                                                  I2C_BUSY_IN_RX
+../drivers/Src/buzz_i2c.c:481:50: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [drivers/Src/subdir.mk:31: drivers/Src/buzz_i2c.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+23:26:23 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../drivers/Src/buzz_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/buzz_i2c.d" -MT"drivers/Src/buzz_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/buzz_i2c.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9952	    100	   1948	  12000	   2ee0	Buzz_Rover.elf
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+23:26:26 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9952	    100	   1948	  12000	   2ee0	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+23:28:42 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9952	    100	   1948	  12000	   2ee0	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+23:29:59 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9952	    100	   1948	  12000	   2ee0	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+23:30:01 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9952	    100	   1948	  12000	   2ee0	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+23:35:11 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9952	    100	   1948	  12000	   2ee0	Buzz_Rover.elf
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+23:35:14 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9952	    100	   1948	  12000	   2ee0	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+23:48:56 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9952	    100	   1948	  12000	   2ee0	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+23:48:58 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9952	    100	   1948	  12000	   2ee0	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+23:50:23 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../drivers/Src/buzz_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/buzz_i2c.d" -MT"drivers/Src/buzz_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/buzz_i2c.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   9912	    100	   1948	  11960	   2eb8	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+23:50:27 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9912	    100	   1948	  11960	   2eb8	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+14:32:27 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9912	    100	   1948	  11960	   2eb8	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+14:33:47 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9912	    100	   1948	  11960	   2eb8	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
