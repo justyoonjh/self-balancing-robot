@@ -21,7 +21,7 @@
 #include "buzz_gpio.h"
 #include "buzz_rcc.h"
 #include "buzz_systick.h"
-//#include "i2c_scanner.h"
+#include "i2c_scanner.h"
 #include "buzz_i2c.h"
 #include "mpu6050.h"
 

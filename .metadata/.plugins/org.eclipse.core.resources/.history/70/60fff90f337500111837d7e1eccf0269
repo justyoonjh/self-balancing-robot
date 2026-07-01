@@ -29,6 +29,4 @@ uint8_t MPU6050_ReadWhoAmI(I2C_Handle_t *pI2CHandle);
 
 int16_t MPU6050_ReadAccelX(I2C_Handle_t *pI2CHandle);
 
-void MPU6050_ReadRawData(I2C_Handle_t *pI2CHandle, Raw_Data_t *pData);
-
 #endif
