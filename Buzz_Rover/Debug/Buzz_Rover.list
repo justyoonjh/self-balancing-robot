@@ -246,15 +246,16 @@ int main(void)
  800034e:	4618      	mov	r0, r3
  8000350:	f000 fc64 	bl	8000c1c <I2C_Init>
 
-	MPU6050_Init(&I2C1Handle);
- 8000354:	1d3b      	adds	r3, r7, #4
- 8000356:	4618      	mov	r0, r3
- 8000358:	f000 f933 	bl	80005c2 <MPU6050_Init>
-
 	I2C_PeripheralControl(I2C1, ENABLE);
- 800035c:	2101      	movs	r1, #1
- 800035e:	4814      	ldr	r0, [pc, #80]	@ (80003b0 <main+0x100>)
- 8000360:	f000 fd22 	bl	8000da8 <I2C_PeripheralControl>
+ 8000354:	2101      	movs	r1, #1
+ 8000356:	4816      	ldr	r0, [pc, #88]	@ (80003b0 <main+0x100>)
+ 8000358:	f000 fd26 	bl	8000da8 <I2C_PeripheralControl>
+
+	MPU6050_Init(&I2C1Handle);
+ 800035c:	1d3b      	adds	r3, r7, #4
+ 800035e:	4618      	mov	r0, r3
+ 8000360:	f000 f92f 	bl	80005c2 <MPU6050_Init>
+
 
 	uint8_t who_am_i = MPU6050_ReadWhoAmI(&I2C1Handle);
  8000364:	1d3b      	adds	r3, r7, #4
