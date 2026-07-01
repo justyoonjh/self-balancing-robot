@@ -104,8 +104,8 @@ int main(void)
 	MPU6050_Init(&I2C1Handle);
 
 	int16_t ax_raw = MPU6050_ReadAccelX(&I2C1Handle);
-	GPIO_WriteToOutputPin(GPIOA, GPIO_PIN_NO_5, GPIO_PIN_SET);
-	printf("ACCEL_X raw = %d\r\n", ax_raw);
+	GPIO_WriteToOutputPin(GPIOA, GPIO_PIN_NO_%, GPIO_PIN_SET);
+
 
 	while(1)
 	{

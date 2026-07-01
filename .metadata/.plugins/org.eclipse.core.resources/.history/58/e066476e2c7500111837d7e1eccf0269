@@ -103,9 +103,12 @@ int main(void)
 
 	MPU6050_Init(&I2C1Handle);
 
-	int16_t ax_raw = MPU6050_ReadAccelX(&I2C1Handle);
+
+	uint8_t who_am_i = MPU6050_ReadWhoAmI(&I2C1Handle);
+
 	GPIO_WriteToOutputPin(GPIOA, GPIO_PIN_NO_5, GPIO_PIN_SET);
-	printf("ACCEL_X raw = %d\r\n", ax_raw);
+	printf("MPU6050 WHO_AM_I = 0x%02X\r\n", who_am_i);
+
 
 	while(1)
 	{

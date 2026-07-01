@@ -32,14 +32,3 @@ uint8_t MPU6050_ReadWhoAmI(I2C_Handle_t *pI2CHandle)
 
 	return result;
 }
-
-int16_t MPU6050_ReadAccelX(I2C_Handle_t *pI2CHandle)
-{
-	uint8_t buf[2];
-	uint8_t reg_addr = ACCEL_XOUT_H;
-
-	I2C_MasterSendData(pI2CHandle, &reg_addr, 1, MPU6050_ADDR, I2C_ENABLE_SR);
-	I2C_MasterReceiveData(pI2CHandle, buf, 2, MPU6050_ADDR, I2C_DISABLE_SR);
-
-	return (int16_t)((buf[0] << 8) | buf[1]);
-}
