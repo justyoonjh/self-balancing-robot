@@ -1,4 +1,4 @@
 ../app/Src/mpu6050.c:3:6:MPU6050_Init	32	static
-../app/Src/mpu6050.c:25:9:MPU6050_ReadWhoAmI	32	static
-../app/Src/mpu6050.c:36:9:MPU6050_ReadAccelX	32	static
-../app/Src/mpu6050.c:48:6:MPU6050_ReadRawData	48	static
+../app/Src/mpu6050.c:29:9:MPU6050_ReadWhoAmI	32	static
+../app/Src/mpu6050.c:40:9:MPU6050_ReadAccelX	32	static
+../app/Src/mpu6050.c:52:6:MPU6050_ReadRawData	48	static

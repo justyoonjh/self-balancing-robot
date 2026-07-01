@@ -8,6 +8,10 @@ void MPU6050_Init(I2C_Handle_t *pI2CHandle)
 	tx_buf[1] = 0x00;
 	I2C_MasterSendData(pI2CHandle, tx_buf, 2, MPU6050_ADDR, I2C_DISABLE_SR);
 
+	tx_buf[0] = SMPLRT_DIV;
+	tx_buf[1] = ODR_10HZ;
+	I2C_MasterSendData(pI2CHandle, tx_buf, 2, MPU6050_ADDR, I2C_DISABLE_SR);
+
 	tx_buf[0] = CONFIG;
 	tx_buf[1] = 0x01;
 	I2C_MasterSendData(pI2CHandle, tx_buf, 2, MPU6050_ADDR, I2C_DISABLE_SR);

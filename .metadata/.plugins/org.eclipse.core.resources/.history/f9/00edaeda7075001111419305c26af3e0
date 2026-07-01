@@ -1,0 +1,34 @@
+#ifndef MPU6050_H
+#define MPU6050_H
+
+#include "buzz_i2c.h"
+
+#define MPU6050_ADDR				0x68U
+
+#define CONFIG					0x1AU
+#define GYRO_CONFIG				0x1BU
+#define ACCEL_CONFIG				0x1CU
+
+#define ACCEL_XOUT_H				0x3BU
+
+typedef struct {
+	int16_t ax;
+	int16_t ay;
+	int16_t az;
+	int16_t temp_raw;
+	int16_t gx;
+	int16_t gy;
+	int16_t gz;
+}Raw_Data_t;
+
+#define PWR_MGMT_1				0x6BU
+#define WHO_AM_I					0x75U
+
+void MPU6050_Init(I2C_Handle_t *pI2CHandle);
+uint8_t MPU6050_ReadWhoAmI(I2C_Handle_t *pI2CHandle);
+
+int16_t MPU6050_ReadAccelX(I2C_Handle_t *pI2CHandle);
+
+void MPU6050_ReadRawData(I2C_Handle_t *pI2CHandle, Raw_Data_t *pData);
+
+#endif

@@ -5,6 +5,12 @@
 
 #define MPU6050_ADDR				0x68U
 
+#define SMPLRT_DIV				0x19U
+
+#define ODR_1KHZ					0U
+#define ODR_100HZ					9U
+#define ODR_10HZ					99U
+
 #define CONFIG					0x1AU
 #define GYRO_CONFIG				0x1BU
 #define ACCEL_CONFIG				0x1CU

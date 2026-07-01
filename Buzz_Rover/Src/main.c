@@ -102,25 +102,46 @@ int main(void)
 	I2C_PeripheralControl(I2C1, ENABLE);
 
 	MPU6050_Init(&I2C1Handle);
-
-	Raw_Data_t raw;
-	MPU6050_ReadRawData(&I2C1Handle, &raw);
-
-	int16_t temp_int = (int16_t)(raw.temp_raw / 340) + 36;
-
-
 	GPIO_WriteToOutputPin(GPIOA, GPIO_PIN_NO_5, GPIO_PIN_SET);
-	printf("AX : %6d\tAY : %6d\tAZ : %6d\n"
-			"GX : %6d\tGY : %6d\tGZ : %6d\n",
-			raw.ax, raw.ay, raw.az, raw.gx, raw.gy, raw.gz);
-	printf("TEMP : %d C\r\n",temp_int);
+	Raw_Data_t raw;
+	uint32_t last_tick = 0;
+
 
 	while(1)
 	{
-		if(g_i2cErrorFlag)
+//		if(g_i2cErrorFlag)
+//		{
+//			printf("I2C Error occurred: code %d\r\n", g_i2cErrorCode);
+//			g_i2cErrorFlag = 0;
+//		}
+		if(GetTick() - last_tick >= 10)
 		{
-			printf("I2C Error occurred: code %d\r\n", g_i2cErrorCode);
-			g_i2cErrorFlag = 0;
+			last_tick = GetTick();
+
+			MPU6050_ReadRawData(&I2C1Handle, &raw);
+
+			int16_t ax_i = raw.ax / 16384;
+			uint16_t ax_f = (uint16_t)((raw.ax < 0 ? -raw.ax : raw.ax) * 100 / 16384 % 100);
+
+			int16_t ay_i = raw.ay / 16384;
+			uint16_t ay_f = (uint16_t)((raw.ay < 0 ? -raw.ay : raw.ay) * 100 / 16384 % 100);
+
+			int16_t az_i = raw.az / 16384;
+			uint16_t az_f = (uint16_t)((raw.az < 0 ? -raw.az : raw.az) * 100 / 16384 % 100);
+
+			int16_t gx_i = raw.gx / 131;
+			uint16_t gx_f = (uint16_t)((raw.gx < 0 ? -raw.gx : raw.gx) * 100 / 131 % 100);
+
+			int16_t gy_i = raw.gy / 131;
+			uint16_t gy_f = (uint16_t)((raw.gy < 0 ? -raw.gy : raw.gy) * 100 / 131 % 100);
+
+			int16_t gz_i = raw.gz / 131;
+			uint16_t gz_f = (uint16_t)((raw.gz < 0 ? -raw.gz : raw.gz) * 100 / 131 % 100);
+
+			int16_t temp_int = (int16_t)(raw.temp_raw / 340) + 36;
+
+			printf("%2d.%02dg\t%2d.%02dg\t%2d.%02dg\t%4d.%02d\t%4d.%02d\t%4d.%02d\t%dC\r\n",
+					ax_i, ax_f, ay_i, ay_f, az_i, az_f, gx_i, gx_f, gy_i, gy_f, gz_i, gz_f, temp_int);
 		}
 
 	}
