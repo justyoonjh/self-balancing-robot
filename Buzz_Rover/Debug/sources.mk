@@ -24,6 +24,7 @@ C_DEPS :=
 SUBDIRS := \
 Src \
 Startup \
+app/Src \
 debug_app/Src \
 drivers/Src \
 

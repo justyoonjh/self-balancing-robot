@@ -1,0 +1,22 @@
+#include "mpu6050.h"
+
+void MPU6050_Init(I2C_Handle_t *pI2CHandle)
+{
+	uint8_t tx_buf[2];
+
+	tx_buf[0] = PWR_MGMT_1;
+	tx_buf[1] = 0x00;
+
+	I2C_MasterSendData(pI2CHandle, tx_buf, 2, MPU6050_ADDR, I2C_DISABLE_SR);
+}
+
+uint8_t MPU6050_ReadWhoAmI(I2C_Handle_t *pI2CHandle)
+{
+	uint8_t reg_addr = WHO_AM_I;
+	uint8_t result = 0;
+
+	I2C_MasterSendData(pI2CHandle, &reg_addr, 1, MPU6050_ADDR, I2C_ENABLE_SR);
+	I2C_MasterReceiveData(pI2CHandle, &result, MPU6050_ADDR, I2C_DISABLE_SR);
+
+	return result;
+}

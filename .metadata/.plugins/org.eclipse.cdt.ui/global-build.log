@@ -779,3 +779,161 @@ arm-none-eabi-size  Buzz_Rover.elf
    9648	    100	   1948	  11696	   2db0	Buzz_Rover.elf
 Finished building: default.size.stdout
  
+00:40:36 **** Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9648	    100	   1948	  11696	   2db0	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+16:34:09 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../app/Src/mpu6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/Src/mpu6050.d" -MT"app/Src/mpu6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/Src/mpu6050.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../app/Src/mpu6050.c: In function 'MPU6050_ReadWhoAmI':
+../app/Src/mpu6050.c:19:9: error: too few arguments to function 'I2C_MasterReceiveData'
+   19 |         I2C_MasterReceiveData(pI2CHandle, &result, MPU6050_ADDR, I2C_DISABLE_SR);
+      |         ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc/mpu6050.h:4,
+                 from ../app/Src/mpu6050.c:1:
+/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_i2c.h:90:6: note: declared here
+   90 | void I2C_MasterReceiveData(I2C_Handle_t *pI2CHandle, uint8_t *pRxBuffer, uint32_t Len, uint8_t SlaveAddr, uint8_t Sr);
+      |      ^~~~~~~~~~~~~~~~~~~~~
+make: *** [app/Src/subdir.mk:19: app/Src/mpu6050.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Src/main.c: In function 'I2C1_ER_IRQHandler':
+../Src/main.c:53:29: error: 'I2C1Handle' undeclared (first use in this function); did you mean 'I2C_Handle_t'?
+   53 |         I2C_ER_IRQHandling(&I2C1Handle);
+      |                             ^~~~~~~~~~
+      |                             I2C_Handle_t
+../Src/main.c:53:29: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c: In function 'main':
+../Src/main.c:99:9: warning: implicit declaration of function 'MPU6050_Init' [-Wimplicit-function-declaration]
+   99 |         MPU6050_Init(&I2C1Handle);
+      |         ^~~~~~~~~~~~
+../Src/main.c:103:28: warning: implicit declaration of function 'MPU6050_ReadWhoAmI' [-Wimplicit-function-declaration]
+  103 |         uint8_t who_am_i = MPU6050_ReadWhoAmI(&I2C1Handle);
+      |                            ^~~~~~~~~~~~~~~~~~
+../Src/main.c:105:9: warning: implicit declaration of function 'GPIO_WriteOutputPin'; did you mean 'GPIO_WriteToOutputPin'? [-Wimplicit-function-declaration]
+  105 |         GPIO_WriteOutputPin(GPIOA, GPIO_PIN_NO_5, GPIO_PIN_SET);
+      |         ^~~~~~~~~~~~~~~~~~~
+      |         GPIO_WriteToOutputPin
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:34:37 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../app/Src/mpu6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/Src/mpu6050.d" -MT"app/Src/mpu6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/Src/mpu6050.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'I2C1_ER_IRQHandler':
+../Src/main.c:53:29: error: 'I2C1Handle' undeclared (first use in this function); did you mean 'I2C_Handle_t'?
+   53 |         I2C_ER_IRQHandling(&I2C1Handle);
+      |                             ^~~~~~~~~~
+      |                             I2C_Handle_t
+../Src/main.c:53:29: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c: In function 'main':
+../Src/main.c:99:9: warning: implicit declaration of function 'MPU6050_Init' [-Wimplicit-function-declaration]
+   99 |         MPU6050_Init(&I2C1Handle);
+      |         ^~~~~~~~~~~~
+../Src/main.c:103:28: warning: implicit declaration of function 'MPU6050_ReadWhoAmI' [-Wimplicit-function-declaration]
+  103 |         uint8_t who_am_i = MPU6050_ReadWhoAmI(&I2C1Handle);
+      |                            ^~~~~~~~~~~~~~~~~~
+../Src/main.c:105:9: warning: implicit declaration of function 'GPIO_WriteOutputPin'; did you mean 'GPIO_WriteToOutputPin'? [-Wimplicit-function-declaration]
+  105 |         GPIO_WriteOutputPin(GPIOA, GPIO_PIN_NO_5, GPIO_PIN_SET);
+      |         ^~~~~~~~~~~~~~~~~~~
+      |         GPIO_WriteToOutputPin
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:37:09 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:93:9: error: 'I2C1handle' undeclared (first use in this function); did you mean 'I2C1Handle'?
+   93 |         I2C1handle = (I2C_Handle_t){0}
+      |         ^~~~~~~~~~
+      |         I2C1Handle
+../Src/main.c:93:9: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:93:39: error: expected ';' before 'I2C1Handle'
+   93 |         I2C1handle = (I2C_Handle_t){0}
+      |                                       ^
+      |                                       ;
+   94 |         I2C1Handle.pI2Cx                                                                = I2C1;
+      |         ~~~~~~~~~~                     
+../Src/main.c:108:9: warning: implicit declaration of function 'GPIO_WriteOutputPin'; did you mean 'GPIO_WriteToOutputPin'? [-Wimplicit-function-declaration]
+  108 |         GPIO_WriteOutputPin(GPIOA, GPIO_PIN_NO_5, GPIO_PIN_SET);
+      |         ^~~~~~~~~~~~~~~~~~~
+      |         GPIO_WriteToOutputPin
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:37:21 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:93:39: error: expected ';' before 'I2C1Handle'
+   93 |         I2C1Handle = (I2C_Handle_t){0}
+      |                                       ^
+      |                                       ;
+   94 |         I2C1Handle.pI2Cx                                                                = I2C1;
+      |         ~~~~~~~~~~                     
+../Src/main.c:108:9: warning: implicit declaration of function 'GPIO_WriteOutputPin'; did you mean 'GPIO_WriteToOutputPin'? [-Wimplicit-function-declaration]
+  108 |         GPIO_WriteOutputPin(GPIOA, GPIO_PIN_NO_5, GPIO_PIN_SET);
+      |         ^~~~~~~~~~~~~~~~~~~
+      |         GPIO_WriteToOutputPin
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:37:28 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:108:9: warning: implicit declaration of function 'GPIO_WriteOutputPin'; did you mean 'GPIO_WriteToOutputPin'? [-Wimplicit-function-declaration]
+  108 |         GPIO_WriteOutputPin(GPIOA, GPIO_PIN_NO_5, GPIO_PIN_SET);
+      |         ^~~~~~~~~~~~~~~~~~~
+      |         GPIO_WriteToOutputPin
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+/opt/st/stm32cubeide_2.0.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.linux64_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld: ./Src/main.o: in function `main':
+/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/Debug/../Src/main.c:108:(.text.main+0xda): undefined reference to `GPIO_WriteOutputPin'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:66: Buzz_Rover.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:37:39 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   8740	    100	   1948	  10788	   2a24	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+16:37:49 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8740	    100	   1948	  10788	   2a24	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+16:39:52 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   8344	    100	   1908	  10352	   2870	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+16:40:00 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8344	    100	   1908	  10352	   2870	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 

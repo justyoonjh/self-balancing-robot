@@ -23,68 +23,56 @@
 #include "buzz_systick.h"
 #include "i2c_scanner.h"
 #include "buzz_i2c.h"
-
-
-#define DWT_CTRL 		(*(volatile uint32_t*)0xE0001000)
-#define DWT_CYCCNT	(*(volatile uint32_t*)0xE0001004)
-#define DEMCR_REG		(*(volatile uint32_t*)0xE000EDFC)
+#include "mpu6050.h"
 
 volatile uint8_t g_i2cErrorFlag = 0;
 volatile uint8_t g_i2cErrorCode = 0xFF;
 
-static I2C_Handle_t I2C1Handle = {0};
-
-void I2C_ApplicationEventCallback(I2C_Handle_t *pI2CHandle, uint8_t AppEv)
-{
-	switch(AppEv)
-	{
-	case I2C_ERROR_BERR:
-	case I2C_ERROR_ARLO:
-	case I2C_ERROR_AF:
-		g_i2cErrorFlag = 1;
-		g_i2cErrorCode = AppEv;
-		break;
-	case I2C_ERROR_OVR:
-	case I2C_ERROR_TIMEOUT:
-		break;
-	case I2C_EV_TX_CMPLT:
-	case I2C_EV_RX_CMPLT:
-		break;
-	default:
-		break;
-	}
-}
-
-void I2C1_EV_IRQHandler(void)
-{
-	I2C_EV_IRQHandling(&I2C1Handle);
-}
-
-void I2C1_ER_IRQHandler(void)
-{
-	I2C_ER_IRQHandling(&I2C1Handle);
-}
+//I2C_Handle_t I2C1Handle;
+//
+//void I2C_ApplicationEventCallback(I2C_Handle_t *pI2CHandle, uint8_t AppEv)
+//{
+//	switch(AppEv)
+//	{
+//	case I2C_ERROR_BERR:
+//	case I2C_ERROR_ARLO:
+//	case I2C_ERROR_AF:
+//		g_i2cErrorFlag = 1;
+//		g_i2cErrorCode = AppEv;
+//		break;
+//	case I2C_ERROR_OVR:
+//	case I2C_ERROR_TIMEOUT:
+//		break;
+//	case I2C_EV_TX_CMPLT:
+//	case I2C_EV_RX_CMPLT:
+//		break;
+//	default:
+//		break;
+//	}
+//}
+//
+//void I2C1_ER_IRQHandler(void)
+//{
+//	I2C_ER_IRQHandling(&I2C1Handle);
+//}
 
 int main(void)
 {
-	DEMCR_REG |= (1 << 24);
-	DWT_CTRL |= (1 << 0);
-	DWT_CYCCNT = 0;
 
 	SysTick_Init();
 
 	GPIO_PeriClockControl(GPIOA, ENABLE);
 
-	GPIO_Handle_t LEDPin;
+	GPIO_Handle_t OutputPin;
 
-	LEDPin.pGPIOx = GPIOA;
-	LEDPin.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUTPUT;
-	LEDPin.GPIO_PinConfig.GPIO_PinOPType = GPIO_OPTYPE_PP;
-	LEDPin.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
-	LEDPin.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_LOW;
-	LEDPin.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_5;
+	OutputPin.pGPIOx = GPIOA;
+	OutputPin.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUTPUT;
+	OutputPin.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_5;
+	OutputPin.GPIO_PinConfig.GPIO_PinOPType = GPIO_OPTYPE_PP;
+	OutputPin.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
+	OutputPin.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_LOW;
 
-	GPIO_Init(&LEDPin);
+	GPIO_Init(&OutputPin);
 
 	GPIO_PeriClockControl(GPIOB, ENABLE);
 
@@ -102,36 +90,24 @@ int main(void)
 	I2CPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_7;
 	GPIO_Init(&I2CPins);
 
-	I2C1Handle = (I2C_Handle_t){0};
-	I2C1Handle.pI2Cx = I2C1;
-	I2C1Handle.I2C_Config.I2C_SCLspeed = I2C_SCL_SPEED_SM;
-	I2C1Handle.I2C_Config.I2C_DeviceAddress = 0x30;
-	I2C1Handle.I2C_Config.I2C_AckControl = I2C_ACK_ENABLE;
-	I2C1Handle.I2C_Config.FMDutyCycle = I2C_FM_DUTY_16_9;
-	// Standard라 DUTY는 쓰이지 않음.
+	I2C_Handle_t I2C1Handle;
+	I2C1Handle.pI2Cx								= I2C1;
+	I2C1Handle.I2C_Config.I2C_SCLspeed 		= I2C_SCL_SPEED_SM;
+	I2C1Handle.I2C_Config.I2C_AckControl		= I2C_ACK_ENABLE;
+	I2C1Handle.I2C_Config.FMDutyCycle			= I2C_FM_DUTY_2;
+	I2C1Handle.I2C_Config.I2C_DeviceAddress 	= 0x30;
 
 	I2C_Init(&I2C1Handle);
 
-	GPIO_IRQConfig(I2C1_ER_IRQ, 1, ENABLE);
-	GPIO_IRQConfig(I2C1_EV_IRQ, 1, ENABLE);
+	MPU6050_Init(&I2C1Handle);
 
 	I2C_PeripheralControl(I2C1, ENABLE);
 
-//	I2C_AddressScan(&I2C1Handle);
-	uint8_t who_am_i_reg = 0x75;
-	uint8_t result = 0;
-
-	I2C_MasterSendDataIT(&I2C1Handle, &who_am_i_reg, 1, 0x69, I2C_DISABLE_SR);
-
-	while(I2C1Handle.TxRxState != I2C_READY);
-
-	I2C_MasterReceiveDataIT(&I2C1Handle, &result, 1, 0x69, I2C_DISABLE_SR);
-
-	while(I2C1Handle.TxRxState != I2C_READY);
+	uint8_t who_am_i = MPU6050_ReadWhoAmI(&I2C1Handle);
 
 	GPIO_WriteToOutputPin(GPIOA, GPIO_PIN_NO_5, GPIO_PIN_SET);
+	printf("MPU6050 WHO_AM_I = 0x%02X\r\n", who_am_i);
 
-	printf("WHO_AM_I(IT) = 0x%02X\r\n", result);
 
 	while(1)
 	{
