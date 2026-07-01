@@ -44,20 +44,3 @@ int16_t MPU6050_ReadAccelX(I2C_Handle_t *pI2CHandle)
 
 	return (int16_t)((buf[0] << 8) | buf[1]);
 }
-
-void MPU6050_ReadRawData(I2C_Handle_t *pI2CHandle, Raw_Data_t *pData)
-{
-	uint8_t buf[14];
-	uint8_t reg_addr = ACCEL_XOUT_H;
-
-	I2C_MasterSendData(pI2CHandle, &reg_addr, 1, MPU6050_ADDR, I2C_ENABLE_SR);
-	I2C_MasterReceiveData(pI2CHandle, buf, 14, MPU6050_ADDR, I2C_DISABLE_SR);
-
-	pData->ax 			= (uint16_t)((buf[0] << 8) | buf[1]);
-	pData->ay 			= (uint16_t)((buf[2] << 8) | buf[3]);
-	pData->az 			= (uint16_t)((buf[4] << 8) | buf[5]);
-	pData->temp_raw 	= (uint16_t)((buf[6] << 8) | buf[7]);
-	pData->gx 			= (uint16_t)((buf[8] << 8) | buf[9]);
-	pData->gy 			= (uint16_t)((buf[10] << 8) | buf[11]);
-	pData->gz			= (uint16_t)((buf[12] << 8) | buf[13]);
-}

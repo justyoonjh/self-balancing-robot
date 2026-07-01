@@ -1,3 +1,4 @@
 ../app/Src/mpu6050.c:3:6:MPU6050_Init	1
 ../app/Src/mpu6050.c:25:9:MPU6050_ReadWhoAmI	1
 ../app/Src/mpu6050.c:36:9:MPU6050_ReadAccelX	1
+../app/Src/mpu6050.c:48:6:MPU6050_ReadRawData	1

@@ -113,7 +113,7 @@ int main(void)
 	printf("AX : %6d\tAY : %6d\tAZ : %6d\n"
 			"GX : %6d\tGY : %6d\tGZ : %6d\n",
 			raw.ax, raw.ay, raw.az, raw.gx, raw.gy, raw.gz);
-	printf("TEMP : %d C\r\n",temp_int);
+	printf("TEMP: %d C\r\n",temp_int);
 
 	while(1)
 	{

@@ -106,14 +106,13 @@ int main(void)
 	Raw_Data_t raw;
 	MPU6050_ReadRawData(&I2C1Handle, &raw);
 
-	int16_t temp_int = (int16_t)(raw.temp_raw / 340) + 36;
-
+	float temp_c = (raw.temp_raw / 340.0f) + 36.53f;
 
 	GPIO_WriteToOutputPin(GPIOA, GPIO_PIN_NO_5, GPIO_PIN_SET);
 	printf("AX : %6d\tAY : %6d\tAZ : %6d\n"
-			"GX : %6d\tGY : %6d\tGZ : %6d\n",
-			raw.ax, raw.ay, raw.az, raw.gx, raw.gy, raw.gz);
-	printf("TEMP : %d C\r\n",temp_int);
+			"GX : %6d\tGY : %6d\tGZ : %6d\n"
+			"TEMP : %.2f\r\n",
+			raw.ax, raw.ay, raw.az, raw.temp_raw, raw.gx, raw.gy, raw.gz);
 
 	while(1)
 	{
