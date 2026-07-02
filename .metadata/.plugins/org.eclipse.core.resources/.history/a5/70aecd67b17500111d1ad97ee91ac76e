@@ -62,13 +62,13 @@ int main(void)
 	GPIO_Init(&I2CPins);
 
 	GPIO_Handle_t USARTPins;
-	USARTPins.pGPIOx									= GPIOA;
+	USARTPins.pGPIOx									= GPIOC;
 	USARTPins.GPIO_PinConfig.GPIO_PinMode			= GPIO_MODE_ALT;
 	USARTPins.GPIO_PinConfig.GPIO_PinAltFunMode	= 7;
 	USARTPins.GPIO_PinConfig.GPIO_PinOPType		= GPIO_OPTYPE_PP;
 	USARTPins.GPIO_PinConfig.GPIO_PinPuPdControl	= GPIO_PU;
 	USARTPins.GPIO_PinConfig.GPIO_PinSpeed			= GPIO_SPEED_FAST;
-	USARTPins.GPIO_PinConfig.GPIO_PinNumber		= GPIO_PIN_NO_2;
+	USARTPins.GPIO_PinConfig.GPIO_PinNumber		= GPIO_PIN_NO_10;
 
 	GPIO_Init(&USARTPins);
 
@@ -81,16 +81,16 @@ int main(void)
 
 	I2C_Init(&I2C1Handle);
 
-	USART_Handle_t USART2Handle;
-	USART2Handle.pUSARTx									= USART2;
-	USART2Handle.USART_Config.USART_Mode				= USART_MODE_ONLY_TX;
-	USART2Handle.USART_Config.USART_Baud				= 115200;
-	USART2Handle.USART_Config.USART_NoOfStopBits		= USART_STOPBITS_1;
-	USART2Handle.USART_Config.USART_WordLength		= USART_WORDLEN_8BITS;
-	USART2Handle.USART_Config.USART_ParityControl		= USART_PARITY_DISABLE;
-	USART2Handle.USART_Config.USART_HWFlowControl		= USART_HW_FLOW_CTRL_NONE;
+	USART_Handle_t USART3Handle;
+	USART3Handle.pUSARTx									= USART3;
+	USART3Handle.USART_Config.USART_Mode				= USART_MODE_ONLY_TX;
+	USART3Handle.USART_Config.USART_Baud				= 115200;
+	USART3Handle.USART_Config.USART_NoOfStopBits		= USART_STOPBITS_1;
+	USART3Handle.USART_Config.USART_WordLength		= USART_WORDLEN_8BITS;
+	USART3Handle.USART_Config.USART_ParityControl		= USART_PARITY_DISABLE;
+	USART3Handle.USART_Config.USART_HWFlowControl		= USART_HW_FLOW_CTRL_NONE;
 
-	USART_Init(&USART2Handle);
+	USART_Init(&USART3Handle);
 
 	I2C_PeripheralControl(I2C1, ENABLE);
 
@@ -110,7 +110,7 @@ int main(void)
 		{
 			last_tick = GetTick();
 
-			MPU6050_SendPacket(&I2C1Handle, &USART2Handle);
+			MPU6050_SendPacket(&I2C1Handle, &USART3Handle);
 		}
 
 	}

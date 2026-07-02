@@ -1815,3 +1815,373 @@ arm-none-eabi-size  Buzz_Rover.elf
    8456	     84	   1900	  10440	   28c8	Buzz_Rover.elf
 Finished building: default.size.stdout
  
+09:50:28 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8456	     84	   1900	  10440	   28c8	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+10:00:28 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../app/Src/mpu6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/Src/mpu6050.d" -MT"app/Src/mpu6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/Src/mpu6050.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../app/Src/mpu6050.c: In function 'MPU6050_SendPacket':
+../app/Src/mpu6050.c:76:34: warning: implicit declaration of function 'snprintf' [-Wimplicit-function-declaration]
+   76 |         uint8_t plen  = (uint8_t)snprintf(payload, sizeof(payload),
+      |                                  ^~~~~~~~
+../app/Src/mpu6050.c:2:1: note: include '<stdio.h>' or provide a declaration of 'snprintf'
+    1 | #include "mpu6050.h"
+  +++ |+#include <stdio.h>
+    2 | #include "buzz_usart.h"
+../app/Src/mpu6050.c:76:34: warning: incompatible implicit declaration of built-in function 'snprintf' [-Wbuiltin-declaration-mismatch]
+   76 |         uint8_t plen  = (uint8_t)snprintf(payload, sizeof(payload),
+      |                                  ^~~~~~~~
+../app/Src/mpu6050.c:76:34: note: include '<stdio.h>' or provide a declaration of 'snprintf'
+../app/Src/mpu6050.c:77:65: warning: format '%d' expects argument of type 'int', but argument 10 has type 'long int' [-Wformat=]
+   77 |                         "AX:%d,AY:%d,AZ:%d,GX:%d,GY:%d,GZ:%d,T:%d",
+      |                                                                ~^
+      |                                                                 |
+      |                                                                 int
+      |                                                                %ld
+   78 |                         raw.ax,raw.ay,raw.az,raw.gx,raw.gy,raw.gz,(int32_t)(raw.temp_raw / 340) + 36) + 1; // included \0
+      |                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                 |
+      |                                                                                                 long int
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   8464	     84	   1900	  10448	   28d0	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+10:01:19 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../app/Src/mpu6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/Src/mpu6050.d" -MT"app/Src/mpu6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/Src/mpu6050.o"
+../app/Src/mpu6050.c: In function 'MPU6050_SendPacket':
+../app/Src/mpu6050.c:78:65: warning: format '%d' expects argument of type 'int', but argument 10 has type 'long int' [-Wformat=]
+   78 |                         "AX:%d,AY:%d,AZ:%d,GX:%d,GY:%d,GZ:%d,T:%d",
+      |                                                                ~^
+      |                                                                 |
+      |                                                                 int
+      |                                                                %ld
+   79 |                         raw.ax,raw.ay,raw.az,raw.gx,raw.gy,raw.gz,(int32_t)(raw.temp_raw / 340) + 36) + 1; // included \0
+      |                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                 |
+      |                                                                                                 long int
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   8464	     84	   1900	  10448	   28d0	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+10:01:44 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../app/Src/mpu6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/Src/mpu6050.d" -MT"app/Src/mpu6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/Src/mpu6050.o"
+../app/Src/mpu6050.c: In function 'MPU6050_SendPacket':
+../app/Src/mpu6050.c:78:31: warning: format '%ld' expects argument of type 'long int', but argument 4 has type 'int' [-Wformat=]
+   78 |                         "AX:%ld,AY:%ld,AZ:%ld,GX:%ld,GY:%ld,GZ:%ld,T:%ld",
+      |                             ~~^
+      |                               |
+      |                               long int
+      |                             %d
+   79 |                         raw.ax,raw.ay,raw.az,raw.gx,raw.gy,raw.gz,(int32_t)(raw.temp_raw / 340) + 36) + 1; // included \0
+      |                         ~~~~~~ 
+      |                            |
+      |                            int
+../app/Src/mpu6050.c:78:38: warning: format '%ld' expects argument of type 'long int', but argument 5 has type 'int' [-Wformat=]
+   78 |                         "AX:%ld,AY:%ld,AZ:%ld,GX:%ld,GY:%ld,GZ:%ld,T:%ld",
+      |                                    ~~^
+      |                                      |
+      |                                      long int
+      |                                    %d
+   79 |                         raw.ax,raw.ay,raw.az,raw.gx,raw.gy,raw.gz,(int32_t)(raw.temp_raw / 340) + 36) + 1; // included \0
+      |                                ~~~~~~ 
+      |                                   |
+      |                                   int
+../app/Src/mpu6050.c:78:45: warning: format '%ld' expects argument of type 'long int', but argument 6 has type 'int' [-Wformat=]
+   78 |                         "AX:%ld,AY:%ld,AZ:%ld,GX:%ld,GY:%ld,GZ:%ld,T:%ld",
+      |                                           ~~^
+      |                                             |
+      |                                             long int
+      |                                           %d
+   79 |                         raw.ax,raw.ay,raw.az,raw.gx,raw.gy,raw.gz,(int32_t)(raw.temp_raw / 340) + 36) + 1; // included \0
+      |                                       ~~~~~~ 
+      |                                          |
+      |                                          int
+../app/Src/mpu6050.c:78:52: warning: format '%ld' expects argument of type 'long int', but argument 7 has type 'int' [-Wformat=]
+   78 |                         "AX:%ld,AY:%ld,AZ:%ld,GX:%ld,GY:%ld,GZ:%ld,T:%ld",
+      |                                                  ~~^
+      |                                                    |
+      |                                                    long int
+      |                                                  %d
+   79 |                         raw.ax,raw.ay,raw.az,raw.gx,raw.gy,raw.gz,(int32_t)(raw.temp_raw / 340) + 36) + 1; // included \0
+      |                                              ~~~~~~ 
+      |                                                 |
+      |                                                 int
+../app/Src/mpu6050.c:78:59: warning: format '%ld' expects argument of type 'long int', but argument 8 has type 'int' [-Wformat=]
+   78 |                         "AX:%ld,AY:%ld,AZ:%ld,GX:%ld,GY:%ld,GZ:%ld,T:%ld",
+      |                                                         ~~^
+      |                                                           |
+      |                                                           long int
+      |                                                         %d
+   79 |                         raw.ax,raw.ay,raw.az,raw.gx,raw.gy,raw.gz,(int32_t)(raw.temp_raw / 340) + 36) + 1; // included \0
+      |                                                     ~~~~~~ 
+      |                                                        |
+      |                                                        int
+../app/Src/mpu6050.c:78:66: warning: format '%ld' expects argument of type 'long int', but argument 9 has type 'int' [-Wformat=]
+   78 |                         "AX:%ld,AY:%ld,AZ:%ld,GX:%ld,GY:%ld,GZ:%ld,T:%ld",
+      |                                                                ~~^
+      |                                                                  |
+      |                                                                  long int
+      |                                                                %d
+   79 |                         raw.ax,raw.ay,raw.az,raw.gx,raw.gy,raw.gz,(int32_t)(raw.temp_raw / 340) + 36) + 1; // included \0
+      |                                                            ~~~~~~ 
+      |                                                               |
+      |                                                               int
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   8468	     84	   1900	  10452	   28d4	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+10:03:14 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8468	     84	   1900	  10452	   28d4	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+10:04:28 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../app/Src/mpu6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/Src/mpu6050.d" -MT"app/Src/mpu6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/Src/mpu6050.o"
+../app/Src/mpu6050.c: In function 'MPU6050_SendPacket':
+../app/Src/mpu6050.c:78:65: warning: format '%d' expects argument of type 'int', but argument 10 has type 'long int' [-Wformat=]
+   78 |                         "AX:%d,AY:%d,AZ:%d,GX:%d,GY:%d,GZ:%d,T:%d",
+      |                                                                ~^
+      |                                                                 |
+      |                                                                 int
+      |                                                                %ld
+   79 |                         raw.ax,raw.ay,raw.az,raw.gx,raw.gy,raw.gz,(int32_t)(raw.temp_raw / 340) + 36) + 1; // included \0
+      |                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                 |
+      |                                                                                                 long int
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   8464	     84	   1900	  10448	   28d0	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+10:04:52 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8464	     84	   1900	  10448	   28d0	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+10:04:57 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8464	     84	   1900	  10448	   28d0	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+10:10:40 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   8452	     84	   1900	  10436	   28c4	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+10:12:01 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8452	     84	   1900	  10436	   28c4	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+10:12:16 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8452	     84	   1900	  10436	   28c4	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+10:13:19 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8452	     84	   1900	  10436	   28c4	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+10:16:56 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8452	     84	   1900	  10436	   28c4	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+10:18:47 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../app/Src/mpu6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/Src/mpu6050.d" -MT"app/Src/mpu6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/Src/mpu6050.o"
+../app/Src/mpu6050.c: In function 'MPU6050_SendPacket':
+../app/Src/mpu6050.c:79:65: warning: format '%d' expects argument of type 'int', but argument 10 has type 'long int' [-Wformat=]
+   79 |                         "AX:%d,AY:%d,AZ:%d,GX:%d,GY:%d,GZ:%d,T:%d",
+      |                                                                ~^
+      |                                                                 |
+      |                                                                 int
+      |                                                                %ld
+   80 |                         raw.ax,raw.ay,raw.az,raw.gx,raw.gy,raw.gz,(int32_t)(raw.temp_raw / 340) + 36) + 1; // included \0
+      |                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                 |
+      |                                                                                                 long int
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   8452	     84	   1900	  10436	   28c4	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+10:22:50 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8452	     84	   1900	  10436	   28c4	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+10:23:33 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../app/Src/mpu6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/Src/mpu6050.d" -MT"app/Src/mpu6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/Src/mpu6050.o"
+../app/Src/mpu6050.c: In function 'MPU6050_SendPacket':
+../app/Src/mpu6050.c:79:65: warning: format '%d' expects argument of type 'int', but argument 10 has type 'long int' [-Wformat=]
+   79 |                         "AX:%d,AY:%d,AZ:%d,GX:%d,GY:%d,GZ:%d,T:%d\r\n",
+      |                                                                ~^
+      |                                                                 |
+      |                                                                 int
+      |                                                                %ld
+   80 |                         raw.ax,raw.ay,raw.az,raw.gx,raw.gy,raw.gz,(int32_t)(raw.temp_raw / 340) + 36) + 1; // included \0
+      |                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                 |
+      |                                                                                                 long int
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   8452	     84	   1900	  10436	   28c4	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+01:22:34 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../app/Src/mpu6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/Src/mpu6050.d" -MT"app/Src/mpu6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/Src/mpu6050.o"
+../app/Src/mpu6050.c: In function 'MPU6050_SendPacket':
+../app/Src/mpu6050.c:79:65: warning: format '%d' expects argument of type 'int', but argument 10 has type 'long int' [-Wformat=]
+   79 |                         "AX:%d,AY:%d,AZ:%d,GX:%d,GY:%d,GZ:%d,T:%d\r\n",
+      |                                                                ~^
+      |                                                                 |
+      |                                                                 int
+      |                                                                %ld
+   80 |                         raw.ax,raw.ay,raw.az,raw.gx,raw.gy,raw.gz,(int32_t)(raw.temp_raw / 340) + 36) + 1; // included \0
+      |                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                 |
+      |                                                                                                 long int
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   8452	     84	   1900	  10436	   28c4	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+01:23:05 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8452	     84	   1900	  10436	   28c4	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+01:23:23 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8452	     84	   1900	  10436	   28c4	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+01:42:28 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8452	     84	   1900	  10436	   28c4	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+01:44:07 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8452	     84	   1900	  10436	   28c4	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+01:44:56 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8452	     84	   1900	  10436	   28c4	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+01:45:54 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8452	     84	   1900	  10436	   28c4	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+01:46:11 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8452	     84	   1900	  10436	   28c4	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+01:47:46 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8452	     84	   1900	  10436	   28c4	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 

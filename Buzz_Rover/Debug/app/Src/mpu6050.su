@@ -1,5 +1,5 @@
-../app/Src/mpu6050.c:4:6:MPU6050_Init	32	static
-../app/Src/mpu6050.c:30:9:MPU6050_ReadWhoAmI	32	static
-../app/Src/mpu6050.c:41:9:MPU6050_ReadAccelX	32	static
-../app/Src/mpu6050.c:53:6:MPU6050_ReadRawData	48	static
-../app/Src/mpu6050.c:70:6:MPU6050_SendPacket	216	static
+../app/Src/mpu6050.c:5:6:MPU6050_Init	32	static
+../app/Src/mpu6050.c:31:9:MPU6050_ReadWhoAmI	32	static
+../app/Src/mpu6050.c:42:9:MPU6050_ReadAccelX	32	static
+../app/Src/mpu6050.c:54:6:MPU6050_ReadRawData	48	static
+../app/Src/mpu6050.c:71:6:MPU6050_SendPacket	216	static

@@ -11,7 +11,7 @@ void MPU6050_Init(I2C_Handle_t *pI2CHandle)
 	I2C_MasterSendData(pI2CHandle, tx_buf, 2, MPU6050_ADDR, I2C_DISABLE_SR);
 
 	tx_buf[0] = SMPLRT_DIV;
-	tx_buf[1] = ODR_100HZ;
+	tx_buf[1] = ODR_10HZ;
 	I2C_MasterSendData(pI2CHandle, tx_buf, 2, MPU6050_ADDR, I2C_DISABLE_SR);
 
 	tx_buf[0] = CONFIG;
@@ -76,7 +76,7 @@ void MPU6050_SendPacket(I2C_Handle_t *pI2CHandle, USART_Handle_t *pUSARTHandle)
 
 	char payload[64];
 	uint8_t plen  = (uint8_t)snprintf(payload, sizeof(payload),
-			"AX:%d,AY:%d,AZ:%d,GX:%d,GY:%d,GZ:%d,T:%d\r\n",
+			"AX:%d,AY:%d,AZ:%d,GX:%d,GY:%d,GZ:%d,T:%d",
 			raw.ax,raw.ay,raw.az,raw.gx,raw.gy,raw.gz,(int32_t)(raw.temp_raw / 340) + 36) + 1; // included \0
 
 	uint8_t packet[70];
