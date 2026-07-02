@@ -67,24 +67,7 @@ void MPU6050_ReadRawData(I2C_Handle_t *pI2CHandle, Raw_Data_t *pData)
 	pData->gz			= (uint16_t)((buf[12] << 8) | buf[13]);
 }
 
-void MPU6050_SendPacket(I2C_Handle_t *pI2CHandle, USART_Handle_t *pUSARTHandle)
+void MPU6050_SendPacket(I2C_Handle_t *pI2CHandle)
 {
-	Raw_Data_t	raw;
-	MPU6050_ReadRawData(pI2CHandle, &raw);
 
-	char payload[64];
-	uint8_t plen  = (uint8_t)snprintf(payload, sizeof(payload),
-			"AX:%d,AY:%d,AZ:%d,GX:%d,GY:%d,GZ:%d,T:%d",
-			raw.ax,raw.ay,raw.az,raw.gx,raw.gy,raw.gz,(int32_t)(raw.temp_raw / 340) + 36) + 1; // included \0
-
-	uint8_t packet[70];
-	packet[0] = PKT_STX;
-	packet[1] = plen;
-	for(uint8_t i = 0; i < plen; i++)
-	{
-		packet[2 + i] = (uint8_t)payload[i];
-		packet[2 + plen] = PKT_ETX;
-	}
-
-	USART_SendData(pUSARTHandle, packet, 2 + plen + 1);
 }

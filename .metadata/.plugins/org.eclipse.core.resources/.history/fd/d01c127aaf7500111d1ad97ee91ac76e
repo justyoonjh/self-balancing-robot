@@ -96,6 +96,7 @@ int main(void)
 
 	MPU6050_Init(&I2C1Handle);
 	GPIO_WriteToOutputPin(GPIOA, GPIO_PIN_NO_5, GPIO_PIN_SET);
+	Raw_Data_t raw;
 	uint32_t last_tick = 0;
 
 

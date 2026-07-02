@@ -2,10 +2,6 @@
 #define MPU6050_H
 
 #include "buzz_i2c.h"
-#include "buzz_usart.h"
-
-#define PKT_STX					0x02U
-#define PKT_ETX					0x03U
 
 #define MPU6050_ADDR				0x68U
 
@@ -40,6 +36,5 @@ uint8_t MPU6050_ReadWhoAmI(I2C_Handle_t *pI2CHandle);
 int16_t MPU6050_ReadAccelX(I2C_Handle_t *pI2CHandle);
 
 void MPU6050_ReadRawData(I2C_Handle_t *pI2CHandle, Raw_Data_t *pData);
-void MPU6050_SendPacket(I2C_Handle_t *pI2CHandle, USART_Handle_t *pUSARTHandle);
 
 #endif
