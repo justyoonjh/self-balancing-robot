@@ -9,6 +9,7 @@ C_SRCS += \
 ../drivers/Src/buzz_i2c.c \
 ../drivers/Src/buzz_rcc.c \
 ../drivers/Src/buzz_systick.c \
+../drivers/Src/buzz_tim.c \
 ../drivers/Src/buzz_usart.c 
 
 OBJS += \
@@ -16,6 +17,7 @@ OBJS += \
 ./drivers/Src/buzz_i2c.o \
 ./drivers/Src/buzz_rcc.o \
 ./drivers/Src/buzz_systick.o \
+./drivers/Src/buzz_tim.o \
 ./drivers/Src/buzz_usart.o 
 
 C_DEPS += \
@@ -23,6 +25,7 @@ C_DEPS += \
 ./drivers/Src/buzz_i2c.d \
 ./drivers/Src/buzz_rcc.d \
 ./drivers/Src/buzz_systick.d \
+./drivers/Src/buzz_tim.d \
 ./drivers/Src/buzz_usart.d 
 
 
@@ -33,7 +36,7 @@ drivers/Src/%.o drivers/Src/%.su drivers/Src/%.cyclo: ../drivers/Src/%.c drivers
 clean: clean-drivers-2f-Src
 
 clean-drivers-2f-Src:
-	-$(RM) ./drivers/Src/buzz_gpio.cyclo ./drivers/Src/buzz_gpio.d ./drivers/Src/buzz_gpio.o ./drivers/Src/buzz_gpio.su ./drivers/Src/buzz_i2c.cyclo ./drivers/Src/buzz_i2c.d ./drivers/Src/buzz_i2c.o ./drivers/Src/buzz_i2c.su ./drivers/Src/buzz_rcc.cyclo ./drivers/Src/buzz_rcc.d ./drivers/Src/buzz_rcc.o ./drivers/Src/buzz_rcc.su ./drivers/Src/buzz_systick.cyclo ./drivers/Src/buzz_systick.d ./drivers/Src/buzz_systick.o ./drivers/Src/buzz_systick.su ./drivers/Src/buzz_usart.cyclo ./drivers/Src/buzz_usart.d ./drivers/Src/buzz_usart.o ./drivers/Src/buzz_usart.su
+	-$(RM) ./drivers/Src/buzz_gpio.cyclo ./drivers/Src/buzz_gpio.d ./drivers/Src/buzz_gpio.o ./drivers/Src/buzz_gpio.su ./drivers/Src/buzz_i2c.cyclo ./drivers/Src/buzz_i2c.d ./drivers/Src/buzz_i2c.o ./drivers/Src/buzz_i2c.su ./drivers/Src/buzz_rcc.cyclo ./drivers/Src/buzz_rcc.d ./drivers/Src/buzz_rcc.o ./drivers/Src/buzz_rcc.su ./drivers/Src/buzz_systick.cyclo ./drivers/Src/buzz_systick.d ./drivers/Src/buzz_systick.o ./drivers/Src/buzz_systick.su ./drivers/Src/buzz_tim.cyclo ./drivers/Src/buzz_tim.d ./drivers/Src/buzz_tim.o ./drivers/Src/buzz_tim.su ./drivers/Src/buzz_usart.cyclo ./drivers/Src/buzz_usart.d ./drivers/Src/buzz_usart.o ./drivers/Src/buzz_usart.su
 
 .PHONY: clean-drivers-2f-Src
 

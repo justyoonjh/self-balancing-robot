@@ -38,7 +38,6 @@
 #include "stm32f446xx_gpio.h"
 #include "stm32f446xx_usart.h"
 #include "stm32f446xx_i2c.h"
-#include "stm32f446xx_tim.h"
 
 
 #endif

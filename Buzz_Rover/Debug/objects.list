@@ -9,4 +9,5 @@
 "./drivers/Src/buzz_i2c.o"
 "./drivers/Src/buzz_rcc.o"
 "./drivers/Src/buzz_systick.o"
+"./drivers/Src/buzz_tim.o"
 "./drivers/Src/buzz_usart.o"
