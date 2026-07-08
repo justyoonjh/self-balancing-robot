@@ -69,6 +69,6 @@ uint32_t TIM_GetElapsedUS_Long(TIM_RegMap_t *pTIMx, TIM_Timestamp_t start)
 	}
 	else
 	{
-		return (end.overflow_count - start.overflow_count - 1) * period + (end.cnt - start.cnt) + end.cnt;
+		return (end.overflow_count - start.overflow_count - 1) * period + (end.cnt - start.cnt);
 	}
 }

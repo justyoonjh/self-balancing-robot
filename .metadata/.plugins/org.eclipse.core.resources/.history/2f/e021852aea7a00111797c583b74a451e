@@ -42,8 +42,6 @@ int main(void)
 	LEDPin.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_LOW;
 	LEDPin.GPIO_PinConfig.GPIO_PinAltFunMode = 0;
 
-	GPIO_Init(&LEDPin);
-
 	TIM2->DIER |= ( 1 << 0 );
 	NVIC_ISER(0);
 

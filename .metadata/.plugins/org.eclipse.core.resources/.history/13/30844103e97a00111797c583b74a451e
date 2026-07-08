@@ -31,26 +31,18 @@
 
 int main(void)
 {
-	GPIO_PeriClockControl(GPIOA, ENABLE);
+	SysTick_Init();
 
-	GPIO_Handle_t LEDPin;
-	LEDPin.pGPIOx = GPIOA;
-	LEDPin.GPIO_PinConfig.GPIO_PinNumber = 5;
-	LEDPin.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUTPUT;
-	LEDPin.GPIO_PinConfig.GPIO_PinOPType = GPIO_OPTYPE_PP;
-	LEDPin.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
-	LEDPin.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_LOW;
-	LEDPin.GPIO_PinConfig.GPIO_PinAltFunMode = 0;
+	TIM2_PCLK_EN();
+	TIM_TimeBase_Init(TIM2, 15, 999);
+	TIM_Start(TIM2);
 
-	GPIO_Init(&LEDPin);
+	TIM_ProfileTest_Run();
 
-	TIM2->DIER |= ( 1 << 0 );
-	NVIC_ISER(0);
+	while(1)
+	{
 
-	TIM_Timestamp_t start_ts = TIM_GetTimestamp(TIM2);
-	for (volatile int i = 0; i < 20000; i++);
-	uint32_t elapsed_us = TIM_GetElapsedUS_Long(TIM2, start_ts);
-	printf("Long Elapsed: %lu us\r\n", elapsed_us);
+	}
 
 
 }

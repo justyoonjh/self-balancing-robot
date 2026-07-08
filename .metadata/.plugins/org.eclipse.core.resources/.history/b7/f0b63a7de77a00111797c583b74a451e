@@ -42,33 +42,13 @@ void TIM2_IRQHandler(void)
 
 uint32_t TIM_GetOverflowCount(void)
 {
-	return overflow_count;
+
 }
 TIM_Timestamp_t TIM_GetTimestamp(TIM_RegMap_t *pTIMx)
 {
-	uint32_t ov1, ov2, cnt;
 
-	do
-	{
-		ov1 = overflow_count;
-		cnt = pTIMx->CNT;
-		ov2 = overflow_count;
-	} while(ov1 != ov2);
-
-	TIM_Timestamp_t ts = { .overflow_count = ov2, .cnt = cnt };
-	return ts;
 }
 uint32_t TIM_GetElapsedUS_Long(TIM_RegMap_t *pTIMx, TIM_Timestamp_t start)
 {
-	TIM_Timestamp_t end = TIM_GetTimestamp(pTIMx);
-	uint32_t period = pTIMx->ARR + 1;
 
-	if (end.cnt >= start.cnt)
-	{
-		return (end.overflow_count - start.overflow_count) * period + (end.cnt - start.cnt);
-	}
-	else
-	{
-		return (end.overflow_count - start.overflow_count - 1) * period + (end.cnt - start.cnt) + end.cnt;
-	}
 }

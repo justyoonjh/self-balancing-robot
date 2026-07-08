@@ -1,3 +1,7 @@
 ../drivers/Src/buzz_tim.c:3:6:TIM_TimeBase_Init	1
 ../drivers/Src/buzz_tim.c:11:6:TIM_Start	1
 ../drivers/Src/buzz_tim.c:16:10:TIM_GetElapsedUs	2
+../drivers/Src/buzz_tim.c:32:6:TIM2_IRQHandler	2
+../drivers/Src/buzz_tim.c:43:10:TIM_GetOverflowCount	1
+../drivers/Src/buzz_tim.c:47:17:TIM_GetTimestamp	2
+../drivers/Src/buzz_tim.c:61:10:TIM_GetElapsedUS_Long	2
