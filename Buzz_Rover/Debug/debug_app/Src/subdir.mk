@@ -5,13 +5,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../debug_app/Src/i2c_scanner.c 
+../debug_app/Src/i2c_scanner.c \
+../debug_app/Src/tim_profiling.c 
 
 OBJS += \
-./debug_app/Src/i2c_scanner.o 
+./debug_app/Src/i2c_scanner.o \
+./debug_app/Src/tim_profiling.o 
 
 C_DEPS += \
-./debug_app/Src/i2c_scanner.d 
+./debug_app/Src/i2c_scanner.d \
+./debug_app/Src/tim_profiling.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -21,7 +24,7 @@ debug_app/Src/%.o debug_app/Src/%.su debug_app/Src/%.cyclo: ../debug_app/Src/%.c
 clean: clean-debug_app-2f-Src
 
 clean-debug_app-2f-Src:
-	-$(RM) ./debug_app/Src/i2c_scanner.cyclo ./debug_app/Src/i2c_scanner.d ./debug_app/Src/i2c_scanner.o ./debug_app/Src/i2c_scanner.su
+	-$(RM) ./debug_app/Src/i2c_scanner.cyclo ./debug_app/Src/i2c_scanner.d ./debug_app/Src/i2c_scanner.o ./debug_app/Src/i2c_scanner.su ./debug_app/Src/tim_profiling.cyclo ./debug_app/Src/tim_profiling.d ./debug_app/Src/tim_profiling.o ./debug_app/Src/tim_profiling.su
 
 .PHONY: clean-debug_app-2f-Src
 

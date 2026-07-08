@@ -1,6 +1,0 @@
-#ifndef MPU6050_H
-#define MPU6050_H
-
-#include "buzz_i2c.h"
-
-#endif

@@ -5,6 +5,7 @@
 "./Startup/startup_stm32f446retx.o"
 "./app/Src/mpu6050.o"
 "./debug_app/Src/i2c_scanner.o"
+"./debug_app/Src/tim_profiling.o"
 "./drivers/Src/buzz_gpio.o"
 "./drivers/Src/buzz_i2c.o"
 "./drivers/Src/buzz_rcc.o"

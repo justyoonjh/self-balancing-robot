@@ -2211,3 +2211,373 @@ Finished building: default.size.stdout
  
 Finished building: Buzz_Rover.list
  
+16:23:34 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../drivers/Src/buzz_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/buzz_gpio.d" -MT"drivers/Src/buzz_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/buzz_gpio.o"
+arm-none-eabi-gcc "../drivers/Src/buzz_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/buzz_i2c.d" -MT"drivers/Src/buzz_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/buzz_i2c.o"
+arm-none-eabi-gcc "../drivers/Src/buzz_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/buzz_rcc.d" -MT"drivers/Src/buzz_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/buzz_rcc.o"
+arm-none-eabi-gcc "../drivers/Src/buzz_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/buzz_tim.d" -MT"drivers/Src/buzz_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/buzz_tim.o"
+arm-none-eabi-gcc "../drivers/Src/buzz_usart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/buzz_usart.d" -MT"drivers/Src/buzz_usart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/buzz_usart.o"
+arm-none-eabi-gcc "../debug_app/Src/i2c_scanner.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"debug_app/Src/i2c_scanner.d" -MT"debug_app/Src/i2c_scanner.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "debug_app/Src/i2c_scanner.o"
+arm-none-eabi-gcc "../app/Src/mpu6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/Src/mpu6050.d" -MT"app/Src/mpu6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/Src/mpu6050.o"
+../app/Src/mpu6050.c: In function 'MPU6050_SendPacket':
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../app/Src/mpu6050.c:79:65: warning: format '%d' expects argument of type 'int', but argument 10 has type 'long int' [-Wformat=]
+   79 |                         "AX:%d,AY:%d,AZ:%d,GX:%d,GY:%d,GZ:%d,T:%d\r\n",
+      |                                                                ~^
+      |                                                                 |
+      |                                                                 int
+      |                                                                %ld
+   80 |                         raw.ax,raw.ay,raw.az,raw.gx,raw.gy,raw.gz,(int32_t)(raw.temp_raw / 340) + 36) + 1; // included \0
+      |                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                 |
+      |                                                                                                 long int
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+    764	      0	   1568	   2332	    91c	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+16:24:59 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_gpio.h:4,
+                 from ../Src/main.c:21:
+../Src/main.c: In function 'main':
+/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp/stm32f446xx.h:23:33: error: expected identifier before numeric constant
+   23 | #define PERIPH_BASE             0x40000000UL
+      |                                 ^~~~~~~~~~~~
+/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp/stm32f446xx.h:24:25: note: in expansion of macro 'PERIPH_BASE'
+   24 | #define APB1PERIPH_BASE PERIPH_BASE
+      |                         ^~~~~~~~~~~
+/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp/stm32f446xx_tim.h:32:30: note: in expansion of macro 'APB1PERIPH_BASE'
+   32 | #define TIM2_PCLK_EN() (RCC->APB1PERIPH_BASE |= (1 << 0))
+      |                              ^~~~~~~~~~~~~~~
+../Src/main.c:33:9: note: in expansion of macro 'TIM2_PCLK_EN'
+   33 |         TIM2_PCLK_EN();
+      |         ^~~~~~~~~~~~
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:36:16 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../drivers/Src/buzz_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/buzz_gpio.d" -MT"drivers/Src/buzz_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/buzz_gpio.o"
+arm-none-eabi-gcc "../drivers/Src/buzz_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/buzz_i2c.d" -MT"drivers/Src/buzz_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/buzz_i2c.o"
+arm-none-eabi-gcc "../drivers/Src/buzz_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/buzz_rcc.d" -MT"drivers/Src/buzz_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/buzz_rcc.o"
+arm-none-eabi-gcc "../drivers/Src/buzz_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/buzz_tim.d" -MT"drivers/Src/buzz_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/buzz_tim.o"
+arm-none-eabi-gcc "../drivers/Src/buzz_usart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/buzz_usart.d" -MT"drivers/Src/buzz_usart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/buzz_usart.o"
+arm-none-eabi-gcc "../debug_app/Src/i2c_scanner.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"debug_app/Src/i2c_scanner.d" -MT"debug_app/Src/i2c_scanner.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "debug_app/Src/i2c_scanner.o"
+arm-none-eabi-gcc "../app/Src/mpu6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/Src/mpu6050.d" -MT"app/Src/mpu6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "app/Src/mpu6050.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../app/Src/mpu6050.c: In function 'MPU6050_SendPacket':
+../app/Src/mpu6050.c:79:65: warning: format '%d' expects argument of type 'int', but argument 10 has type 'long int' [-Wformat=]
+   79 |                         "AX:%d,AY:%d,AZ:%d,GX:%d,GY:%d,GZ:%d,T:%d\r\n",
+      |                                                                ~^
+      |                                                                 |
+      |                                                                 int
+      |                                                                %ld
+   80 |                         raw.ax,raw.ay,raw.az,raw.gx,raw.gy,raw.gz,(int32_t)(raw.temp_raw / 340) + 36) + 1; // included \0
+      |                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                 |
+      |                                                                                                 long int
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+    780	      0	   1568	   2348	    92c	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+16:37:39 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:35:9: error: too few arguments to function 'TIM_Start'
+   35 |         TIM_Start();
+      |         ^~~~~~~~~
+In file included from ../Src/main.c:28:
+/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_tim.h:7:6: note: declared here
+    7 | void TIM_Start(TIM_RegMap_t *pTIMx);
+      |      ^~~~~~~~~
+make: *** [Src/subdir.mk:28: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:38:19 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+    880	      0	   1568	   2448	    990	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+16:40:20 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+    880	      0	   1568	   2448	    990	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+17:04:44 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+    880	      0	   1568	   2448	    990	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+17:09:22 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+    880	      0	   1568	   2448	    990	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+18:50:23 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../drivers/Src/buzz_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/buzz_tim.d" -MT"drivers/Src/buzz_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/buzz_tim.o"
+arm-none-eabi-gcc "../debug_app/Src/i2c_scanner.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"debug_app/Src/i2c_scanner.d" -MT"debug_app/Src/i2c_scanner.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "debug_app/Src/i2c_scanner.o"
+arm-none-eabi-gcc "../debug_app/Src/tim_profiling.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"debug_app/Src/tim_profiling.d" -MT"debug_app/Src/tim_profiling.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "debug_app/Src/tim_profiling.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+    880	      0	   1568	   2448	    990	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+18:59:36 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../debug_app/Src/tim_profiling.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"debug_app/Src/tim_profiling.d" -MT"debug_app/Src/tim_profiling.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "debug_app/Src/tim_profiling.o"
+../debug_app/Src/tim_profiling.c: In function 'TIM_ProfileTest_Run':
+../debug_app/Src/tim_profiling.c:11:54: error: 'tim_start' undeclared (first use in this function); did you mean 'time_start'?
+   11 |         uint32_t elapsed_us = TIM_GetElapsedUs(TIM2, tim_start);
+      |                                                      ^~~~~~~~~
+      |                                                      time_start
+../debug_app/Src/tim_profiling.c:11:54: note: each undeclared identifier is reported only once for each function it appears in
+../debug_app/Src/tim_profiling.c:9:18: warning: unused variable 'time_start' [-Wunused-variable]
+    9 |         uint32_t time_start = TIM2->CNT;
+      |                  ^~~~~~~~~~
+make: *** [debug_app/Src/subdir.mk:22: debug_app/Src/tim_profiling.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:59:54 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../debug_app/Src/tim_profiling.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"debug_app/Src/tim_profiling.d" -MT"debug_app/Src/tim_profiling.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "debug_app/Src/tim_profiling.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+    880	      0	   1568	   2448	    990	Buzz_Rover.elf
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+19:04:58 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   5428	     96	   1904	   7428	   1d04	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+19:05:00 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5428	     96	   1904	   7428	   1d04	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+19:09:30 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../debug_app/Src/tim_profiling.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"debug_app/Src/tim_profiling.d" -MT"debug_app/Src/tim_profiling.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "debug_app/Src/tim_profiling.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   5428	     96	   1904	   7428	   1d04	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+19:09:33 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5428	     96	   1904	   7428	   1d04	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+19:14:02 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../debug_app/Src/tim_profiling.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"debug_app/Src/tim_profiling.d" -MT"debug_app/Src/tim_profiling.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "debug_app/Src/tim_profiling.o"
+../debug_app/Src/tim_profiling.c: In function 'TIM_ProfileTest_Run':
+../debug_app/Src/tim_profiling.c:18:16: warning: too many arguments for format [-Wformat-extra-args]
+   18 |         printf("UIF Flag: &lu\r\n", (TIM2->SR & ( 1 << 0)));
+      |                ^~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   5468	     96	   1904	   7468	   1d2c	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+19:14:20 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../debug_app/Src/tim_profiling.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"debug_app/Src/tim_profiling.d" -MT"debug_app/Src/tim_profiling.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "debug_app/Src/tim_profiling.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   5468	     96	   1904	   7468	   1d2c	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+19:14:31 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5468	     96	   1904	   7468	   1d2c	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+19:15:09 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../debug_app/Src/tim_profiling.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"debug_app/Src/tim_profiling.d" -MT"debug_app/Src/tim_profiling.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "debug_app/Src/tim_profiling.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   5464	     96	   1904	   7464	   1d28	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+19:15:11 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5464	     96	   1904	   7464	   1d28	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+19:15:39 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5464	     96	   1904	   7464	   1d28	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+19:15:55 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../debug_app/Src/tim_profiling.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"debug_app/Src/tim_profiling.d" -MT"debug_app/Src/tim_profiling.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "debug_app/Src/tim_profiling.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   5464	     96	   1904	   7464	   1d28	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+19:15:57 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5464	     96	   1904	   7464	   1d28	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+19:16:12 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../debug_app/Src/tim_profiling.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"debug_app/Src/tim_profiling.d" -MT"debug_app/Src/tim_profiling.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "debug_app/Src/tim_profiling.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5468	     96	   1904	   7468	   1d2c	Buzz_Rover.elf
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+19:16:15 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5468	     96	   1904	   7468	   1d2c	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+19:16:32 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../debug_app/Src/tim_profiling.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"debug_app/Src/tim_profiling.d" -MT"debug_app/Src/tim_profiling.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "debug_app/Src/tim_profiling.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   5464	     96	   1904	   7464	   1d28	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+19:16:33 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5464	     96	   1904	   7464	   1d28	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+19:17:36 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-gcc "../debug_app/Src/tim_profiling.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc" -I"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"debug_app/Src/tim_profiling.d" -MT"debug_app/Src/tim_profiling.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "debug_app/Src/tim_profiling.o"
+arm-none-eabi-gcc -o "Buzz_Rover.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buzz_Rover.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buzz_Rover.elf
+ 
+arm-none-eabi-size  Buzz_Rover.elf 
+arm-none-eabi-objdump -h -S Buzz_Rover.elf  > "Buzz_Rover.list"
+   text	   data	    bss	    dec	    hex	filename
+   5468	     96	   1904	   7468	   1d2c	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buzz_Rover.list
+ 
+19:17:38 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+make -j4 all 
+arm-none-eabi-size  Buzz_Rover.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5468	     96	   1904	   7468	   1d2c	Buzz_Rover.elf
+Finished building: default.size.stdout
+ 

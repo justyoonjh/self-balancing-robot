@@ -12,3 +12,17 @@ void TIM_Start(TIM_RegMap_t *pTIMx)
 {
 	pTIMx->CR1 |= (1 << 0);
 }
+
+uint32_t TIM_GetElapsedUs(TIM_RegMap_t *pTIMx, uint32_t start_cnt)
+{
+	uint32_t end_cnt = pTIMx->CNT;
+
+	if (end_cnt >= start_cnt)
+	{
+		return end_cnt - start_cnt;
+	}
+	else
+	{
+		return (pTIMx->ARR + 1) - start_cnt + end_cnt;
+	}
+}

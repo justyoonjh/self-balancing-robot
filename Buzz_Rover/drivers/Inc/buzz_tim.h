@@ -6,4 +6,6 @@
 void TIM_TimeBase_Init(TIM_RegMap_t *pTIMx, uint16_t psc, uint32_t arr);
 void TIM_Start(TIM_RegMap_t *pTIMx);
 
+uint32_t TIM_GetElapsedUs(TIM_RegMap_t *pTIMx, uint32_t start_cnt);
+
 #endif

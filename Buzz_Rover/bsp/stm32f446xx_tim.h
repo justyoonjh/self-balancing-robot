@@ -29,6 +29,6 @@ typedef struct
 
 #define TIM2		((TIM_RegMap_t*) TIM2_BASEADDR)
 
-#define TIM2_PCLK_EN() (RCC->APB1PERIPH_BASE |= (1 << 0))
+#define TIM2_PCLK_EN() (RCC->APB1ENR |= (1 << 0))
 
 #endif

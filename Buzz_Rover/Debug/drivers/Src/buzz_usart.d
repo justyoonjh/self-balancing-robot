@@ -5,6 +5,7 @@ drivers/Src/buzz_usart.o: ../drivers/Src/buzz_usart.c \
  /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp/stm32f446xx_gpio.h \
  /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp/stm32f446xx_usart.h \
  /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp/stm32f446xx_i2c.h \
+ /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp/stm32f446xx_tim.h \
  /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_rcc.h
 /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_usart.h:
 /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp/stm32f446xx.h:
@@ -12,4 +13,5 @@ drivers/Src/buzz_usart.o: ../drivers/Src/buzz_usart.c \
 /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp/stm32f446xx_gpio.h:
 /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp/stm32f446xx_usart.h:
 /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp/stm32f446xx_i2c.h:
+/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp/stm32f446xx_tim.h:
 /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_rcc.h:

@@ -25,12 +25,24 @@
 #include "buzz_i2c.h"
 #include "buzz_usart.h"
 #include "mpu6050.h"
+#include "buzz_tim.h"
+#include "tim_profiling.h"
 
 
 int main(void)
 {
+	SysTick_Init();
 
+	TIM2_PCLK_EN();
+	TIM_TimeBase_Init(TIM2, 15, 999);
+	TIM_Start(TIM2);
 
+	TIM_ProfileTest_Run();
+
+	while(1)
+	{
+
+	}
 
 
 }
