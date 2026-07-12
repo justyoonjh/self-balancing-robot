@@ -2,7 +2,6 @@
 #define STM32F446XX_TIM_H_
 
 #define TIM2_BASEADDR 0x40000000
-#define TIM3_BASEADDR 0x40000400
 
 typedef struct
 {
@@ -29,9 +28,7 @@ typedef struct
 }TIM_RegMap_t;
 
 #define TIM2		((TIM_RegMap_t*) TIM2_BASEADDR)
-#define TIM3		((TIM_RegMap_t*) TIM3_BASEADDR)
 
 #define TIM2_PCLK_EN() (RCC->APB1ENR |= (1 << 0))
-#define TIM3_PCLK_EN() (RCC->APB1ENR |= (1 << 1))
 
 #endif

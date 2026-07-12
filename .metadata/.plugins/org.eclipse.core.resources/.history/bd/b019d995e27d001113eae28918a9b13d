@@ -40,29 +40,13 @@ int main(void)
 
 	GPIO_Init(&LEDPin);
 
-	GPIO_Handle_t TIM3Pin;
-	TIM3Pin.pGPIOx = GPIOA;
-	TIM3Pin.GPIO_PinConfig.GPIO_PinNumber = 6;
-	TIM3Pin.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUTPUT;
-	TIM3Pin.GPIO_PinConfig.GPIO_PinOPType = GPIO_OPTYPE_PP;
-	TIM3Pin.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
-	TIM3Pin.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_LOW;
-	TIM3Pin.GPIO_PinConfig.GPIO_PinAltFunMode = 0;
-
-	GPIO_Init(&TIM3Pin);
-
 	TIM2_PCLK_EN();
-	TIM_TimeBase_Init(TIM2, 15999, 999);
+	// TIM_TimeBase_Init(TIM2, 1599, 999); A-1
+//	TIM_TimeBase_Init(TIM2, 15999, 99); A-2
+	TIM_TimeBase_Init(TIM2, 15, 332);
 	TIM_Start(TIM2);
 	TIM2->DIER |= ( 1 << 0 );
 	NVIC_ISER(0) |= (1 << 28);
-
-	TIM3_PCLK_EN();
-	TIM_TimeBase_Init(TIM3, 15999, 499);
-	TIM_Start(TIM3);
-	TIM3->DIER |= ( 1 << 0 );
-	NVIC_ISER(0) |= (1 << 29);
-
 
 	while(1);
 

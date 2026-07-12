@@ -71,20 +71,3 @@ uint32_t TIM_GetElapsedUS_Long(TIM_RegMap_t *pTIMx, TIM_Timestamp_t start)
 		return (end.overflow_count - start.overflow_count - 1) * period + (period - start.cnt) + end.cnt;
 	}
 }
-
-static volatile uint32_t tim3_overflow_count = 0;
-
-void TIM3_IRQHandler(void)
-{
-	if(TIM3->SR & (1 >> 0))
-	{
-		TIM3->SR &= ~(1 >> 0);
-		tim3_overflow_count++;
-		GPIOA->ODR ^= (1 << 6);
-	}
-}
-
-uint32_t TIM_GetTim3OverflowCount(void)
-{
-	return tim3_overflow_count;
-}

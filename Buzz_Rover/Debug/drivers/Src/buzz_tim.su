@@ -2,6 +2,8 @@
 ../drivers/Src/buzz_tim.c:11:6:TIM_Start	16	static
 ../drivers/Src/buzz_tim.c:16:10:TIM_GetElapsedUs	24	static
 ../drivers/Src/buzz_tim.c:32:6:TIM2_IRQHandler	4	static
-../drivers/Src/buzz_tim.c:45:10:TIM_GetOverflowCount	4	static
-../drivers/Src/buzz_tim.c:49:17:TIM_GetTimestamp	40	static
-../drivers/Src/buzz_tim.c:63:10:TIM_GetElapsedUS_Long	40	static
+../drivers/Src/buzz_tim.c:42:10:TIM_GetOverflowCount	4	static
+../drivers/Src/buzz_tim.c:46:17:TIM_GetTimestamp	40	static
+../drivers/Src/buzz_tim.c:60:10:TIM_GetElapsedUS_Long	40	static
+../drivers/Src/buzz_tim.c:77:6:TIM3_IRQHandler	4	static
+../drivers/Src/buzz_tim.c:87:10:TIM_GetTim3OverflowCount	4	static
