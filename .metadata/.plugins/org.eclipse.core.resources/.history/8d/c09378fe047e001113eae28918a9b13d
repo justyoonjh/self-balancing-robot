@@ -46,10 +46,10 @@ int main(void)
 	TIM2->DIER |= ( 1 << 0 );
 	NVIC_ISER(0) |= (1 << 28);
 
-	while(1)
-	{
-		__asm volatile ("wfi");
-	}
+	while(1);
+//	{
+//		__asm volatile ("wfi");
+//	}
 
 
 }
