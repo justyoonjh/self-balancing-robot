@@ -47,14 +47,11 @@ int main(void)
 	Tim2Ch1.pTIMx = TIM2;
 	Tim2Ch1.TIM_Config.TIM_Channel = 1;
 	Tim2Ch1.TIM_Config.TIM_OCPreload = 1;
-	Tim2Ch1.TIM_Config.TIM_Period = 499;
+	Tim2Ch1.TIM_Config.TIM_Period = 999;
 	Tim2Ch1.TIM_Config.TIM_Prescaler = 15;
 
 	TIM_PWM_Init(&Tim2Ch1);
 
-
-	TIM2->DIER |= (1 << 0);
-	NVIC_ISER(0) |= (1 << 28);
 
 
 	while(1);

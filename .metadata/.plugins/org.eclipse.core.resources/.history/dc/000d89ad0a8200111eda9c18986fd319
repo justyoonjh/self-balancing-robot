@@ -48,7 +48,7 @@ int main(void)
 	Tim2Ch1.TIM_Config.TIM_Channel = 1;
 	Tim2Ch1.TIM_Config.TIM_OCPreload = 1;
 	Tim2Ch1.TIM_Config.TIM_Period = 499;
-	Tim2Ch1.TIM_Config.TIM_Prescaler = 15;
+	Tim2Ch1.TIM_Config.TIM_Prescaler = 7;
 
 	TIM_PWM_Init(&Tim2Ch1);
 

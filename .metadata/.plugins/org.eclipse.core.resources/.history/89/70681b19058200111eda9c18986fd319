@@ -28,7 +28,7 @@ uint32_t TIM_GetElapsedUs(TIM_RegMap_t *pTIMx, uint32_t start_cnt)
 }
 
 static volatile uint32_t overflow_count = 0;
-static uint16_t pwm_duty = 999;
+static uint16_t pwm_duty = 0;
 static int8_t pwm_direction = 1;
 
 void TIM2_IRQHandler(void)
