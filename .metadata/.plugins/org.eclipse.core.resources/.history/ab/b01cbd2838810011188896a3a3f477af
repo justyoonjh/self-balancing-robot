@@ -28,8 +28,6 @@ uint32_t TIM_GetElapsedUs(TIM_RegMap_t *pTIMx, uint32_t start_cnt)
 }
 
 static volatile uint32_t overflow_count = 0;
-static uint16_t pwm_duty = 0;
-static int8_t pwm_direction = 1;
 
 void TIM2_IRQHandler(void)
 {
@@ -37,12 +35,7 @@ void TIM2_IRQHandler(void)
 	{
 		TIM2->SR &= ~(1 << 0);
 		overflow_count++;
-
-		TIM2->CCR1 = pwm_duty;
-		pwm_duty += pwm_direction;
-
-		if(pwm_duty >= 999) { pwm_duty = 999; pwm_direction = -1; }
-		if(pwm_duty == 0) { pwm_direction = 1; }
+		GPIOA->ODR ^= ( 1 << 5 );
 	}
 }
 
@@ -130,6 +123,4 @@ void TIM_PWM_Init(TIM_Handle_t *pTIMHandle)
 		pTIMHandle->pTIMx->CCER |= ( 0x1 << 4 );
 		pTIMHandle->pTIMx->CCR4 = 0;
 	}
-
-	pTIMHandle->pTIMx->CR1 |= (0x1 << 0); // CEN - 반드시 마지막
 }

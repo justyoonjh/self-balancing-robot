@@ -1,9 +1,10 @@
 ../drivers/Src/buzz_tim.c:3:6:TIM_TimeBase_Init	1
 ../drivers/Src/buzz_tim.c:11:6:TIM_Start	1
 ../drivers/Src/buzz_tim.c:16:10:TIM_GetElapsedUs	2
-../drivers/Src/buzz_tim.c:32:6:TIM2_IRQHandler	2
-../drivers/Src/buzz_tim.c:42:10:TIM_GetOverflowCount	1
-../drivers/Src/buzz_tim.c:46:17:TIM_GetTimestamp	2
-../drivers/Src/buzz_tim.c:60:10:TIM_GetElapsedUS_Long	2
-../drivers/Src/buzz_tim.c:77:6:TIM3_IRQHandler	2
-../drivers/Src/buzz_tim.c:87:10:TIM_GetTim3OverflowCount	1
+../drivers/Src/buzz_tim.c:34:6:TIM2_IRQHandler	4
+../drivers/Src/buzz_tim.c:49:10:TIM_GetOverflowCount	1
+../drivers/Src/buzz_tim.c:53:17:TIM_GetTimestamp	2
+../drivers/Src/buzz_tim.c:67:10:TIM_GetElapsedUS_Long	2
+../drivers/Src/buzz_tim.c:84:6:TIM3_IRQHandler	2
+../drivers/Src/buzz_tim.c:94:10:TIM_GetTim3OverflowCount	1
+../drivers/Src/buzz_tim.c:99:6:TIM_PWM_Init	5

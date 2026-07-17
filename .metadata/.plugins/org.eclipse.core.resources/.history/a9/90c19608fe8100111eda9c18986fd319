@@ -39,10 +39,6 @@ void TIM2_IRQHandler(void)
 		overflow_count++;
 
 		TIM2->CCR1 = pwm_duty;
-		pwm_duty += pwm_direction;
-
-		if(pwm_duty >= 999) { pwm_duty = 999; pwm_direction = -1; }
-		if(pwm_duty == 0) { pwm_direction = 1; }
 	}
 }
 

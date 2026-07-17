@@ -28,8 +28,6 @@ uint32_t TIM_GetElapsedUs(TIM_RegMap_t *pTIMx, uint32_t start_cnt)
 }
 
 static volatile uint32_t overflow_count = 0;
-static uint16_t pwm_duty = 0;
-static int8_t pwm_direction = 1;
 
 void TIM2_IRQHandler(void)
 {
@@ -37,12 +35,7 @@ void TIM2_IRQHandler(void)
 	{
 		TIM2->SR &= ~(1 << 0);
 		overflow_count++;
-
-		TIM2->CCR1 = pwm_duty;
-		pwm_duty += pwm_direction;
-
-		if(pwm_duty >= 999) { pwm_duty = 999; pwm_direction = -1; }
-		if(pwm_duty == 0) { pwm_direction = 1; }
+		GPIOA->ODR ^= ( 1 << 5 );
 	}
 }
 
@@ -94,42 +87,4 @@ void TIM3_IRQHandler(void)
 uint32_t TIM_GetTim3OverflowCount(void)
 {
 	return tim3_overflow_count;
-}
-
-void TIM_PWM_Init(TIM_Handle_t *pTIMHandle)
-{
-	pTIMHandle->pTIMx->PSC = pTIMHandle->TIM_Config.TIM_Prescaler;
-	pTIMHandle->pTIMx->ARR = pTIMHandle->TIM_Config.TIM_Period;
-
-	switch(pTIMHandle->TIM_Config.TIM_Channel)
-	{
-	case 1:
-		pTIMHandle->pTIMx->CCMR1 &= ~(0x7 << 4);
-		pTIMHandle->pTIMx->CCMR1 |= (0x6 << 4);
-		pTIMHandle->pTIMx->CCMR1 |= (pTIMHandle->TIM_Config.TIM_OCPreload << 3);
-		pTIMHandle->pTIMx->CCER |= (0x1 << 0);
-		pTIMHandle->pTIMx->CCR1 = 0;
-		break;
-	case 2:
-		pTIMHandle->pTIMx->CCMR1 &= ~(0x7 << 12);
-		pTIMHandle->pTIMx->CCMR1 |= ~(0x6 << 12);
-		pTIMHandle->pTIMx->CCMR1 |= (pTIMHandle->TIM_Config.TIM_OCPreload << 11);
-		pTIMHandle->pTIMx->CCER |= ( 0x1 << 4 );
-		pTIMHandle->pTIMx->CCR2 = 0;
-		break;
-	case 3:
-		pTIMHandle->pTIMx->CCMR2 &= ~(0x7 << 4);
-		pTIMHandle->pTIMx->CCMR2 |= (0x6 << 4);
-		pTIMHandle->pTIMx->CCMR2 |= (pTIMHandle->TIM_Config.TIM_OCPreload << 3);
-		pTIMHandle->pTIMx->CCER |= (0x1 << 0);
-		pTIMHandle->pTIMx->CCR3 = 0;
-	case 4:
-		pTIMHandle->pTIMx->CCMR2 &= ~(0x7 << 12);
-		pTIMHandle->pTIMx->CCMR2 |= ~(0x6 << 12);
-		pTIMHandle->pTIMx->CCMR2 |= (pTIMHandle->TIM_Config.TIM_OCPreload << 11);
-		pTIMHandle->pTIMx->CCER |= ( 0x1 << 4 );
-		pTIMHandle->pTIMx->CCR4 = 0;
-	}
-
-	pTIMHandle->pTIMx->CR1 |= (0x1 << 0); // CEN - 반드시 마지막
 }
