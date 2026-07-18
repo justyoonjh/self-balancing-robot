@@ -52,7 +52,7 @@ int main(void)
 
 	TIM2->CCR1 = 100;
 	Delay_ms(50);
-	TIM2->CCR1 = 900;
+
 
 	while(1);
 
