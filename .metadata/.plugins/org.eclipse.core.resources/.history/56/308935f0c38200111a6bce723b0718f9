@@ -54,9 +54,6 @@ int main(void)
 
 	TIM2->CCR1 = 100;
 	Delay_ms(50);
-
-	while(TIM2->CNT < 500);
-
 	TIM2->CCR1 = 900;
 
 	while(1);

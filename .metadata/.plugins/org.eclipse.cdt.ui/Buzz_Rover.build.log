@@ -1,10 +1,10 @@
-00:29:43 **** Incremental Build of configuration Debug for project Buzz_Rover ****
+01:29:36 **** Incremental Build of configuration Debug for project Buzz_Rover ****
 make -j4 all 
 arm-none-eabi-size  Buzz_Rover.elf 
    text	   data	    bss	    dec	    hex	filename
-   2824	      4	   1580	   4408	   1138	Buzz_Rover.elf
+   2916	      8	   1576	   4500	   1194	Buzz_Rover.elf
 Finished building: default.size.stdout
  
 
-00:29:43 Build Finished. 0 errors, 0 warnings. (took 79ms)
+01:29:36 Build Finished. 0 errors, 0 warnings. (took 292ms)
 

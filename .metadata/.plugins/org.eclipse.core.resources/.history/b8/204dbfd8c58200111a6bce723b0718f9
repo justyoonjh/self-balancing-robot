@@ -46,7 +46,7 @@ int main(void)
 	TIM_Handle_t Tim2Ch1;
 	Tim2Ch1.pTIMx = TIM2;
 	Tim2Ch1.TIM_Config.TIM_Channel = 1;
-	Tim2Ch1.TIM_Config.TIM_OCPreload = 1;
+	Tim2Ch1.TIM_Config.TIM_OCPreload = 0;
 	Tim2Ch1.TIM_Config.TIM_Period = 999;
 	Tim2Ch1.TIM_Config.TIM_Prescaler = 15;
 

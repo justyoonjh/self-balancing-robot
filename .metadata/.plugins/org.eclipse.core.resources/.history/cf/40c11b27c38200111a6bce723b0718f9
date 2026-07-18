@@ -27,8 +27,6 @@
 
 int main(void)
 {
-	SysTick_Init();
-
 	TIM2_PCLK_EN();
 	GPIO_PeriClockControl(GPIOA, ENABLE);
 
@@ -54,9 +52,6 @@ int main(void)
 
 	TIM2->CCR1 = 100;
 	Delay_ms(50);
-
-	while(TIM2->CNT < 500);
-
 	TIM2->CCR1 = 900;
 
 	while(1);
