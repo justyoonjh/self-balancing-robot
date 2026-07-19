@@ -46,12 +46,12 @@ int main(void)
 	Tim2Ch1.pTIMx = TIM2;
 	Tim2Ch1.TIM_Config.TIM_Channel = 1;
 	Tim2Ch1.TIM_Config.TIM_OCPreload = 1;
-	Tim2Ch1.TIM_Config.TIM_Period = 799;
+	Tim2Ch1.TIM_Config.TIM_Period = 15999;
 	Tim2Ch1.TIM_Config.TIM_Prescaler = 0;
 
 	TIM_PWM_Init(&Tim2Ch1);
 
-	TIM2->CCR1 = 400;
+	TIM2->CCR1 = 8000;
 
 	while(1);
 
