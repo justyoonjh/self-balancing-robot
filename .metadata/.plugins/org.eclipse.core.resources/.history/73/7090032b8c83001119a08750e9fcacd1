@@ -126,7 +126,6 @@ void TIM_PWM_Init(TIM_Handle_t *pTIMHandle)
 		break;
 	case 4:
 		pTIMHandle->pTIMx->CCMR2 &= ~(0x7 << 12);
-		pTIMHandle->pTIMx->CCMR2 |= (0x6 << 12);
 		pTIMHandle->pTIMx->CCMR2 |= (pTIMHandle->TIM_Config.TIM_OCPreload << 11);
 		pTIMHandle->pTIMx->CCER |= ( 0x1 << 4 );
 		pTIMHandle->pTIMx->CCR4 = 0;
