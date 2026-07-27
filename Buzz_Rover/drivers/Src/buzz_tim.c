@@ -28,8 +28,6 @@ uint32_t TIM_GetElapsedUs(TIM_RegMap_t *pTIMx, uint32_t start_cnt)
 }
 
 static volatile uint32_t overflow_count = 0;
-static uint16_t pwm_duty = 999;
-static int8_t pwm_direction = 1;
 
 void TIM2_IRQHandler(void)
 {
@@ -37,12 +35,6 @@ void TIM2_IRQHandler(void)
 	{
 		TIM2->SR &= ~(1 << 0);
 		overflow_count++;
-
-		TIM2->CCR1 = pwm_duty;
-		pwm_duty += pwm_direction;
-
-		if(pwm_duty >= 999) { pwm_duty = 999; pwm_direction = -1; }
-		if(pwm_duty == 0) { pwm_direction = 1; }
 	}
 }
 
@@ -83,9 +75,9 @@ static volatile uint32_t tim3_overflow_count = 0;
 
 void TIM3_IRQHandler(void)
 {
-	if(TIM3->SR & (1 >> 0))
+	if(TIM3->SR & (1 << 0))
 	{
-		TIM3->SR &= ~(1 >> 0);
+		TIM3->SR &= ~(1 << 0);
 		tim3_overflow_count++;
 		GPIOA->ODR ^= (1 << 6);
 	}
@@ -121,17 +113,42 @@ void TIM_PWM_Init(TIM_Handle_t *pTIMHandle)
 		pTIMHandle->pTIMx->CCMR2 &= ~(0x7 << 4);
 		pTIMHandle->pTIMx->CCMR2 |= (0x6 << 4);
 		pTIMHandle->pTIMx->CCMR2 |= (pTIMHandle->TIM_Config.TIM_OCPreload << 3);
-		pTIMHandle->pTIMx->CCER |= (0x1 << 0);
+		pTIMHandle->pTIMx->CCER |= (0x1 << 8);
 		pTIMHandle->pTIMx->CCR3 = 0;
 		break;
 	case 4:
 		pTIMHandle->pTIMx->CCMR2 &= ~(0x7 << 12);
 		pTIMHandle->pTIMx->CCMR2 |= (0x6 << 12);
 		pTIMHandle->pTIMx->CCMR2 |= (pTIMHandle->TIM_Config.TIM_OCPreload << 11);
-		pTIMHandle->pTIMx->CCER |= ( 0x1 << 4 );
+		pTIMHandle->pTIMx->CCER |= (0x1 << 12);
 		pTIMHandle->pTIMx->CCR4 = 0;
 		break;
 	}
 
 	pTIMHandle->pTIMx->CR1 |= (0x1 << 0); // CEN - 반드시 마지막
+}
+
+void TIM_SetDutyCycle(TIM_Handle_t *pTIMHandle, uint8_t duty_percent)
+{
+	uint32_t ccr_value;
+	if(duty_percent > 100)
+	{
+		duty_percent = 100;
+	}
+	ccr_value = ((uint32_t)duty_percent * pTIMHandle->TIM_Config.TIM_Period) / 100;
+	switch(pTIMHandle->TIM_Config.TIM_Channel)
+	{
+	case 1:
+		pTIMHandle->pTIMx->CCR1 = ccr_value;
+		break;
+	case 2:
+		pTIMHandle->pTIMx->CCR2 = ccr_value;
+		break;
+	case 3:
+		pTIMHandle->pTIMx->CCR3 = ccr_value;
+		break;
+	case 4:
+		pTIMHandle->pTIMx->CCR4 = ccr_value;
+		break;
+	}
 }

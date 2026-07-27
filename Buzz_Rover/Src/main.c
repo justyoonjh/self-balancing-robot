@@ -28,50 +28,29 @@
 int main(void)
 {
 	SysTick_Init();
+	GPIO_PeriClockControl(GPIOB, ENABLE);
+	GPIO_Handle_t STBY_Handle;
 
-	TIM2_PCLK_EN();
-	GPIO_PeriClockControl(GPIOA, ENABLE);
+	STBY_Handle.pGPIOx = GPIOB;
+	STBY_Handle.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_4;
+	STBY_Handle.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUTPUT;
+	STBY_Handle.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_LOW;
+	STBY_Handle.GPIO_PinConfig.GPIO_PinOPType = GPIO_OPTYPE_PP;
+	STBY_Handle.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
 
-	GPIO_Handle_t PwmPin;
-	PwmPin.pGPIOx = GPIOA;
-	PwmPin.GPIO_PinConfig.GPIO_PinNumber = 0;
-	PwmPin.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_ALT;
-	PwmPin.GPIO_PinConfig.GPIO_PinOPType = GPIO_OPTYPE_PP;
-	PwmPin.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
-	PwmPin.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_LOW;
-	PwmPin.GPIO_PinConfig.GPIO_PinAltFunMode = 1;  // AF1 = TIM2_CH1
-	GPIO_Init(&PwmPin);
+	GPIO_PeriClockControl(GPIOB, ENABLE);
 
-	GPIO_Handle_t PwmPin2;
-	PwmPin2.pGPIOx = GPIOA;
-	PwmPin2.GPIO_PinConfig.GPIO_PinNumber = 1;
-	PwmPin2.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_ALT;
-	PwmPin2.GPIO_PinConfig.GPIO_PinOPType = GPIO_OPTYPE_PP;
-	PwmPin2.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
-	PwmPin2.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_LOW;
-	PwmPin2.GPIO_PinConfig.GPIO_PinAltFunMode = 1;  // AF1 = TIM2_CH1
-	GPIO_Init(&PwmPin2);
+	GPIO_Init(&STBY_Handle);
 
-	TIM_Handle_t Tim2Ch1;
-	Tim2Ch1.pTIMx = TIM2;
-	Tim2Ch1.TIM_Config.TIM_Channel = 1;
-	Tim2Ch1.TIM_Config.TIM_OCPreload = 1;
-	Tim2Ch1.TIM_Config.TIM_Period = 999;
-	Tim2Ch1.TIM_Config.TIM_Prescaler = 15;
-	TIM_PWM_Init(&Tim2Ch1);
+	uint32_t toggle_count = 0;
 
-	TIM_Handle_t Tim2Ch2;
-	Tim2Ch2.pTIMx = TIM2;
-	Tim2Ch2.TIM_Config.TIM_Channel = 2;
-	Tim2Ch2.TIM_Config.TIM_OCPreload = 1;
-	Tim2Ch2.TIM_Config.TIM_Period = 999;
-	Tim2Ch2.TIM_Config.TIM_Prescaler = 15;
-	TIM_PWM_Init(&Tim2Ch2);
-
-	TIM2->CCR1 = 200;
-	TIM2->CCR2 = 700;
-
-	while(1);
+	while(1)
+	{
+		GPIO_ToggleOutputPin(GPIOB, GPIO_PIN_NO_4);
+		toggle_count++;
+		printf("STBY toggle count: %lu\r\n", toggle_count);
+		Delay_ms(500);
+	}
 
 
 }

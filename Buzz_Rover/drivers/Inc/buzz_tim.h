@@ -33,5 +33,6 @@ void TIM_Start(TIM_RegMap_t *pTIMx);
 uint32_t TIM_GetElapsedUs(TIM_RegMap_t *pTIMx, uint32_t start_cnt);
 
 void TIM_PWM_Init(TIM_Handle_t *pTIMHandle);
+void TIM_SetDutyCycle(TIM_Handle_t *pTIMHandle, uint8_t duty_percent);
 
 #endif

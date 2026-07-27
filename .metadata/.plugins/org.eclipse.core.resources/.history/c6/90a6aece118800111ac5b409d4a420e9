@@ -1,0 +1,30 @@
+#ifndef MOTOR_CTRL_H_
+#define MOTOR_CTRL_H_
+
+#include "buzz_gpio.h"
+#include "buzz_tim.h"
+
+typedef enum
+{
+	MOTOR_DIR_FORWARD = 0,
+	MOTOR_DIR_REVERSE,
+	MOTOR_DIR_BRAKE,
+	MOTOR_DIR_COAST
+}Motor_Direction_t;
+
+typedef struct
+{
+	TIM_Handle_t *pPWM_Handle;
+	GPIO_RegMap_t *pIN1_Port;
+	uint8_t IN1_Pin;
+	GPIO_RegMap_t *pIN2_Port;
+	uint8_t IN2_Pin;
+}Motor_Handle_t;
+
+void Motor_EnableDriver(GPIO_RegMap_t *pSTBYPort, uint8_t STBYPin);
+void Motor_DisableDriver(GPIO_RegMap_t *pSTBYPort, uint8_t STBYPin);
+void Motor_SetDirection(Motor_Handle_t *pMotorHandle, Motor_Direction_t direction);
+void Motor_SetSpeed(Motor_Handle_t *pMotorHandle, uint8_t duty_percent);
+
+
+#endif

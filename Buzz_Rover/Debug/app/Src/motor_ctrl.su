@@ -1,0 +1,4 @@
+../app/Src/motor_ctrl.c:3:6:Motor_EnableDriver	16	static
+../app/Src/motor_ctrl.c:9:6:Motor_DisableDriver	16	static
+../app/Src/motor_ctrl.c:14:6:Motor_SetDirection	16	static
+../app/Src/motor_ctrl.c:37:6:Motor_SetSpeed	16	static

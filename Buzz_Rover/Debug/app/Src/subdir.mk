@@ -5,12 +5,15 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../app/Src/motor_ctrl.c \
 ../app/Src/mpu6050.c 
 
 OBJS += \
+./app/Src/motor_ctrl.o \
 ./app/Src/mpu6050.o 
 
 C_DEPS += \
+./app/Src/motor_ctrl.d \
 ./app/Src/mpu6050.d 
 
 
@@ -21,7 +24,7 @@ app/Src/%.o app/Src/%.su app/Src/%.cyclo: ../app/Src/%.c app/Src/subdir.mk
 clean: clean-app-2f-Src
 
 clean-app-2f-Src:
-	-$(RM) ./app/Src/mpu6050.cyclo ./app/Src/mpu6050.d ./app/Src/mpu6050.o ./app/Src/mpu6050.su
+	-$(RM) ./app/Src/motor_ctrl.cyclo ./app/Src/motor_ctrl.d ./app/Src/motor_ctrl.o ./app/Src/motor_ctrl.su ./app/Src/mpu6050.cyclo ./app/Src/mpu6050.d ./app/Src/mpu6050.o ./app/Src/mpu6050.su
 
 .PHONY: clean-app-2f-Src
 
