@@ -9,7 +9,8 @@ Src/main.o: ../Src/main.c \
  /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_rcc.h \
  /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_systick.h \
  /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_tim.h \
- /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc/tim_profiling.h
+ /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc/tim_profiling.h \
+ /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc/motor_ctrl.h
 /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_gpio.h:
 /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp/stm32f446xx.h:
 /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/bsp/stm32f446xx_rcc.h:
@@ -21,3 +22,4 @@ Src/main.o: ../Src/main.c \
 /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_systick.h:
 /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/drivers/Inc/buzz_tim.h:
 /home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/debug_app/Inc/tim_profiling.h:
+/home/justjhst/바탕화면/self-balancing-robot/Buzz_Rover/app/Inc/motor_ctrl.h:

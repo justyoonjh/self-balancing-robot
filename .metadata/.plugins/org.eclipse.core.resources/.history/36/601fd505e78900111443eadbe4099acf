@@ -135,8 +135,8 @@ int main(void)
 
 	Motor_EnableDriver(GPIOB, GPIO_PIN_NO_4);
 
-	Motor_SetSpeed(&PWMA, 30);
-	Motor_SetSpeed(&PWMB, 30);
+	Motor_SetSpeed(&PWMA, 25);
+	Motor_SetSpeed(&PWMB, 25);
 
 
 	while(1)
