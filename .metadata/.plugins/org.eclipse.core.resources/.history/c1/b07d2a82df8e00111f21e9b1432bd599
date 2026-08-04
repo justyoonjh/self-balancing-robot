@@ -35,7 +35,6 @@ int main(void)
 	SysTick_Init();
 	GPIO_PeriClockControl(GPIOA, ENABLE);
 	GPIO_PeriClockControl(GPIOB, ENABLE);
-	TIM2_PCLK_EN();
 
 	GPIO_Handle_t Ch1Pin, Ch2Pin;
 
@@ -145,7 +144,7 @@ int main(void)
 	while(1)
 	{
 		Motor_SetDirection(&PWMA, MOTOR_DIR_FORWARD);
-		Motor_SetDirection(&PWMB, MOTOR_DIR_REVERSE);
+		Motor_SetDirection(&PWMB, MOTOR_DIR_FORWARD);
 		printf("MODE: FORWARD\r\n");
 		Delay_ms(5000);
 
@@ -155,7 +154,7 @@ int main(void)
 		Delay_ms(5000);
 
 		Motor_SetDirection(&PWMA, MOTOR_DIR_REVERSE);
-		Motor_SetDirection(&PWMB, MOTOR_DIR_FORWARD);
+		Motor_SetDirection(&PWMB, MOTOR_DIR_REVERSE);
 		printf("MODE: REVERSE\r\n");
 		Delay_ms(5000);
 
